@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */; };
+		4BB2236F2A0F729E009F6142 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236E2A0F729E009F6142 /* ContentView.swift */; };
+		4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223702A0F729F009F6142 /* Assets.xcassets */; };
+		4BB223742A0F729F009F6142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223732A0F729F009F6142 /* Preview Assets.xcassets */; };
+		4BB2237E2A0F729F009F6142 /* DinotisSampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2237D2A0F729F009F6142 /* DinotisSampleProjectTests.swift */; };
+		4BB223882A0F729F009F6142 /* DinotisSampleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223872A0F729F009F6142 /* DinotisSampleProjectUITests.swift */; };
+		4BB2238A2A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223892A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift */; };
+		4BB2239B2A10706E009F6142 /* DinotisData in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB2239A2A10706E009F6142 /* DinotisData */; };
+		4BB2239F2A107429009F6142 /* DinotisDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB2239E2A107429009F6142 /* DinotisDesignSystem */; };
+		4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223A72A107ACE009F6142 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4BB2237A2A0F729F009F6142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BB223612A0F729E009F6142 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BB223682A0F729E009F6142;
+			remoteInfo = DinotisSampleProject;
+		};
+		4BB223842A0F729F009F6142 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BB223612A0F729E009F6142 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BB223682A0F729E009F6142;
+			remoteInfo = DinotisSampleProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4BB223692A0F729E009F6142 /* DinotisSampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinotisSampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectApp.swift; sourceTree = "<group>"; };
+		4BB2236E2A0F729E009F6142 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4BB223702A0F729F009F6142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BB223732A0F729F009F6142 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4BB223792A0F729F009F6142 /* DinotisSampleProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinotisSampleProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB2237D2A0F729F009F6142 /* DinotisSampleProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectTests.swift; sourceTree = "<group>"; };
+		4BB223832A0F729F009F6142 /* DinotisSampleProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinotisSampleProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BB223872A0F729F009F6142 /* DinotisSampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectUITests.swift; sourceTree = "<group>"; };
+		4BB223892A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4BB223A72A107ACE009F6142 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BB223662A0F729E009F6142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB2239F2A107429009F6142 /* DinotisDesignSystem in Frameworks */,
+				4BB2239B2A10706E009F6142 /* DinotisData in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB223762A0F729F009F6142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB223802A0F729F009F6142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BB223602A0F729E009F6142 = {
+			isa = PBXGroup;
+			children = (
+				4BB2236B2A0F729E009F6142 /* DinotisSampleProject */,
+				4BB2237C2A0F729F009F6142 /* DinotisSampleProjectTests */,
+				4BB223862A0F729F009F6142 /* DinotisSampleProjectUITests */,
+				4BB2236A2A0F729E009F6142 /* Products */,
+				4BB223992A107059009F6142 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4BB2236A2A0F729E009F6142 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223692A0F729E009F6142 /* DinotisSampleProject.app */,
+				4BB223792A0F729F009F6142 /* DinotisSampleProjectTests.xctest */,
+				4BB223832A0F729F009F6142 /* DinotisSampleProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BB2236B2A0F729E009F6142 /* DinotisSampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223A12A107A3E009F6142 /* Feature */,
+				4BB223A22A107A44009F6142 /* Common */,
+				4BB223722A0F729F009F6142 /* Preview Content */,
+			);
+			path = DinotisSampleProject;
+			sourceTree = "<group>";
+		};
+		4BB223722A0F729F009F6142 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223732A0F729F009F6142 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4BB2237C2A0F729F009F6142 /* DinotisSampleProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BB2237D2A0F729F009F6142 /* DinotisSampleProjectTests.swift */,
+			);
+			path = DinotisSampleProjectTests;
+			sourceTree = "<group>";
+		};
+		4BB223862A0F729F009F6142 /* DinotisSampleProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223872A0F729F009F6142 /* DinotisSampleProjectUITests.swift */,
+				4BB223892A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift */,
+			);
+			path = DinotisSampleProjectUITests;
+			sourceTree = "<group>";
+		};
+		4BB223992A107059009F6142 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BB223A12A107A3E009F6142 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223A42A107AA9009F6142 /* Home */,
+				4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */,
+				4BB2236E2A0F729E009F6142 /* ContentView.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		4BB223A22A107A44009F6142 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223A32A107A54009F6142 /* Resources */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4BB223A32A107A54009F6142 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223702A0F729F009F6142 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4BB223A42A107AA9009F6142 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223A52A107AB4009F6142 /* View */,
+				4BB223A62A107ABA009F6142 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4BB223A52A107AB4009F6142 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223A72A107ACE009F6142 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BB223A62A107ABA009F6142 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BB223682A0F729E009F6142 /* DinotisSampleProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB2238D2A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProject" */;
+			buildPhases = (
+				4BB223652A0F729E009F6142 /* Sources */,
+				4BB223662A0F729E009F6142 /* Frameworks */,
+				4BB223672A0F729E009F6142 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DinotisSampleProject;
+			packageProductDependencies = (
+				4BB2239A2A10706E009F6142 /* DinotisData */,
+				4BB2239E2A107429009F6142 /* DinotisDesignSystem */,
+			);
+			productName = DinotisSampleProject;
+			productReference = 4BB223692A0F729E009F6142 /* DinotisSampleProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BB223782A0F729F009F6142 /* DinotisSampleProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB223902A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProjectTests" */;
+			buildPhases = (
+				4BB223752A0F729F009F6142 /* Sources */,
+				4BB223762A0F729F009F6142 /* Frameworks */,
+				4BB223772A0F729F009F6142 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BB2237B2A0F729F009F6142 /* PBXTargetDependency */,
+			);
+			name = DinotisSampleProjectTests;
+			productName = DinotisSampleProjectTests;
+			productReference = 4BB223792A0F729F009F6142 /* DinotisSampleProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4BB223822A0F729F009F6142 /* DinotisSampleProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BB223932A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProjectUITests" */;
+			buildPhases = (
+				4BB2237F2A0F729F009F6142 /* Sources */,
+				4BB223802A0F729F009F6142 /* Frameworks */,
+				4BB223812A0F729F009F6142 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4BB223852A0F729F009F6142 /* PBXTargetDependency */,
+			);
+			name = DinotisSampleProjectUITests;
+			productName = DinotisSampleProjectUITests;
+			productReference = 4BB223832A0F729F009F6142 /* DinotisSampleProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BB223612A0F729E009F6142 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					4BB223682A0F729E009F6142 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					4BB223782A0F729F009F6142 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4BB223682A0F729E009F6142;
+					};
+					4BB223822A0F729F009F6142 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 4BB223682A0F729E009F6142;
+					};
+				};
+			};
+			buildConfigurationList = 4BB223642A0F729E009F6142 /* Build configuration list for PBXProject "DinotisSampleProject" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BB223602A0F729E009F6142;
+			productRefGroup = 4BB2236A2A0F729E009F6142 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BB223682A0F729E009F6142 /* DinotisSampleProject */,
+				4BB223782A0F729F009F6142 /* DinotisSampleProjectTests */,
+				4BB223822A0F729F009F6142 /* DinotisSampleProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BB223672A0F729E009F6142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB223742A0F729F009F6142 /* Preview Assets.xcassets in Resources */,
+				4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB223772A0F729F009F6142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB223812A0F729F009F6142 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BB223652A0F729E009F6142 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */,
+				4BB2236F2A0F729E009F6142 /* ContentView.swift in Sources */,
+				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB223752A0F729F009F6142 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB2237E2A0F729F009F6142 /* DinotisSampleProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BB2237F2A0F729F009F6142 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB223882A0F729F009F6142 /* DinotisSampleProjectUITests.swift in Sources */,
+				4BB2238A2A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BB2237B2A0F729F009F6142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BB223682A0F729E009F6142 /* DinotisSampleProject */;
+			targetProxy = 4BB2237A2A0F729F009F6142 /* PBXContainerItemProxy */;
+		};
+		4BB223852A0F729F009F6142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BB223682A0F729E009F6142 /* DinotisSampleProject */;
+			targetProxy = 4BB223842A0F729F009F6142 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4BB2238B2A0F729F009F6142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4BB2238C2A0F729F009F6142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BB2238E2A0F729F009F6142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DinotisSampleProject/Preview Content\"";
+				DEVELOPMENT_TEAM = 39B633LG23;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BB2238F2A0F729F009F6142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DinotisSampleProject/Preview Content\"";
+				DEVELOPMENT_TEAM = 39B633LG23;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4BB223912A0F729F009F6142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39B633LG23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DinotisSampleProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DinotisSampleProject";
+			};
+			name = Debug;
+		};
+		4BB223922A0F729F009F6142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39B633LG23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DinotisSampleProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DinotisSampleProject";
+			};
+			name = Release;
+		};
+		4BB223942A0F729F009F6142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39B633LG23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DinotisSampleProject;
+			};
+			name = Debug;
+		};
+		4BB223952A0F729F009F6142 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 39B633LG23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.irhamnaufal8.DinotisSampleProjectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DinotisSampleProject;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BB223642A0F729E009F6142 /* Build configuration list for PBXProject "DinotisSampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB2238B2A0F729F009F6142 /* Debug */,
+				4BB2238C2A0F729F009F6142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BB2238D2A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB2238E2A0F729F009F6142 /* Debug */,
+				4BB2238F2A0F729F009F6142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BB223902A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB223912A0F729F009F6142 /* Debug */,
+				4BB223922A0F729F009F6142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BB223932A0F729F009F6142 /* Build configuration list for PBXNativeTarget "DinotisSampleProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BB223942A0F729F009F6142 /* Debug */,
+				4BB223952A0F729F009F6142 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BB2239A2A10706E009F6142 /* DinotisData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DinotisData;
+		};
+		4BB2239E2A107429009F6142 /* DinotisDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DinotisDesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4BB223612A0F729E009F6142 /* Project object */;
+}
