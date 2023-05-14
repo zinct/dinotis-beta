@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC4E2A1118B9005A0313 /* SplashView.swift */; };
+		4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC502A11255E005A0313 /* OnboardingView.swift */; };
 		4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */; };
 		4BB2236F2A0F729E009F6142 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236E2A0F729E009F6142 /* ContentView.swift */; };
 		4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223702A0F729F009F6142 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B84CC4E2A1118B9005A0313 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4B84CC502A11255E005A0313 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4BB223692A0F729E009F6142 /* DinotisSampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinotisSampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectApp.swift; sourceTree = "<group>"; };
 		4BB2236E2A0F729E009F6142 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B84CC4B2A11189A005A0313 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				4B84CC4C2A1118A1005A0313 /* View */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		4B84CC4C2A1118A1005A0313 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B84CC4E2A1118B9005A0313 /* SplashView.swift */,
+				4B84CC502A11255E005A0313 /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4BB223602A0F729E009F6142 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +164,7 @@
 		4BB223A12A107A3E009F6142 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				4B84CC4B2A11189A005A0313 /* Intro */,
 				4BB223A42A107AA9009F6142 /* Home */,
 				4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */,
 				4BB2236E2A0F729E009F6142 /* ContentView.swift */,
@@ -325,7 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */,
+				4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */,
 				4BB2236F2A0F729E009F6142 /* ContentView.swift in Sources */,
+				4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */,
 				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
