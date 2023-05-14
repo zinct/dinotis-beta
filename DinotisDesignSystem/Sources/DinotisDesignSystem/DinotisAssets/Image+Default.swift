@@ -19,7 +19,7 @@ public extension Image {
     static let imgTextRole = Image("img-text-role", bundle: .module)
     
     // Icons
-    static let icArrowrightRole = Image("ic-arrowright-role")
-    static let icBackHeader = Image("ic-back-header")
-    static let icHelpHeader = Image("ic-help-header")
+    static let icArrowrightRole = Image("ic-arrowright-role", bundle: .module)
+    static let icBackHeader = Image("ic-back-header", bundle: .module)
+    static let icHelpHeader = Image("ic-help-header", bundle: .module)
 }
