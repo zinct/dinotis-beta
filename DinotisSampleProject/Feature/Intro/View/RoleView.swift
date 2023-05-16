@@ -10,7 +10,6 @@ import SwiftUI
 struct RoleView: View {
     var body: some View {
         VStack {
-                
             Image.imgTextRole
                 .resizable()
                 .scaledToFit()
@@ -26,9 +25,7 @@ struct RoleView: View {
                     .foregroundColor(Color(hex: "#52575C"))
                     .padding(.bottom, 17)
                 
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: LoginView()) {
                     HStack(alignment: .center) {
                         Image.imgAudiensRole
                             .resizable()
@@ -89,6 +86,7 @@ struct RoleView: View {
                 }
             }
             .padding(.horizontal, 25)
+            .navigationBarBackButtonHidden()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

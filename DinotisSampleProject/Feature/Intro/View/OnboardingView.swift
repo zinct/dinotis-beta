@@ -80,6 +80,13 @@ struct OnboardingView: View {
                 
                 Spacer()
                 
+                NavigationLink(destination: RoleView()) {
+                    Text("Selanjutnya")
+                        .font(.robotoBold(size: 14))
+                        .foregroundColor(.primaryPurple)
+                }
+                .isHidden((Int(selectedIndex) ?? 0) < 1, remove: (Int(selectedIndex) ?? 0) < 1)
+                
                 Button(action: {
                     handleTabView(type: .next)
                 }) {
@@ -87,7 +94,7 @@ struct OnboardingView: View {
                         .font(.robotoBold(size: 14))
                         .foregroundColor(.primaryPurple)
                 }
-                
+                .isHidden((Int(selectedIndex) ?? 0) >= 1, remove: (Int(selectedIndex) ?? 0) >= 1)
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 20)
@@ -166,7 +173,6 @@ struct IndexTabViewComponent: View {
                 Rectangle()
                     .fill(Color.primaryPurple)
                     .frame(width: 21, height: 5)
-                    .matchedGeometryEffect(id: "DinotisIndexTabViewComponent", in: namespace)
             }
         }
     }

@@ -22,4 +22,5 @@ public extension Image {
     static let icArrowrightRole = Image("ic-arrowright-role", bundle: .module)
     static let icBackHeader = Image("ic-back-header", bundle: .module)
     static let icHelpHeader = Image("ic-help-header", bundle: .module)
+    static let icDropdownAuth = Image("ic-dropdown-auth", bundle: .module)
 }

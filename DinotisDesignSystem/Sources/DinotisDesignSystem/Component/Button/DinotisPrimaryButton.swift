@@ -22,13 +22,15 @@ public struct DinotisPrimaryButton: View {
 	private let bgColor: Color
 	private let text: String
 	private let type: ButtonType
+    private let disabled: Bool
 
 	public init(
 		text: String,
 		type: ButtonType,
         height: CGFloat? = nil,
 		textColor: Color,
-		bgColor: Color,
+        bgColor: Color,
+		disabled: Bool = false,
 		_ action: @escaping () -> Void
 	) {
 		self.text = text
@@ -36,7 +38,8 @@ public struct DinotisPrimaryButton: View {
         self.height = height
 		self.textColor = textColor
 		self.action = action
-		self.type = type
+        self.type = type
+		self.disabled = disabled
 	}
 
 	public var body: some View {
@@ -55,6 +58,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             } else {
                 Button(action: action) {
                     Text(text)
@@ -67,6 +71,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             }
 
 		case .adaptiveScreen:
@@ -89,6 +94,7 @@ public struct DinotisPrimaryButton: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             } else {
                 Button(action: action) {
                     HStack {
@@ -107,6 +113,7 @@ public struct DinotisPrimaryButton: View {
                     )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             }
 
 		case .mini:
@@ -123,6 +130,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             } else {
                 Button(action: action) {
                     Text(text)
@@ -135,6 +143,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             }
             
 		case .fixed(let width):
@@ -150,6 +159,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             } else {
                 Button(action: action) {
                     Text(text)
@@ -163,6 +173,7 @@ public struct DinotisPrimaryButton: View {
                         )
                 }
                 .buttonStyle(.plain)
+                .disabled(disabled)
             }
 		}
 
