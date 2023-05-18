@@ -12,12 +12,11 @@ enum AuthViewState {
     case login, register
 }
 
-let whatsappNumber = "https://wa.me/6281395749557"
+
 let phoneDesired = "81395749557"
 let passwordDesired = "admin"
 
-struct LoginView: View {
-    
+struct CreatorAuthView: View {
     @State private var phone = ""
     @State private var password = ""
     @State private var state = AuthViewState.login
@@ -26,27 +25,29 @@ struct LoginView: View {
     @State private var isPasswordError = false
     @State private var isCountriesShow = false
     @State private var isPasswordShow = false
+    @State private var otpView = false
+    @State private var isLoginSuccess = false
     
-    func handleHelpIndicator() {
-        if let url = URL(string: whatsappNumber),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:])
-        }
-    }
+    @State private var selectedCountry = Country.getAll()[0]
     
     func handleLogin() {
         if phone != phoneDesired {
-           isPhoneError = true
+            isPhoneError = true
         } else {
             isPhoneError = false
         }
         
         if password != passwordDesired {
-           isPasswordError = true
+            isPasswordError = true
         } else {
             isPasswordError = false
         }
         
+        if phone == phoneDesired && password == passwordDesired {
+            withAnimation {
+                isLoginSuccess = true                
+            }
+        }
     }
     
     var body: some View {
@@ -54,26 +55,10 @@ struct LoginView: View {
             Rectangle()
                 .fill(Color.backgroundPurple)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
             
             VStack {
-                HStack {
-                    Image.icBackHeader
-                        .frame(width: 37, height: 36)
-                        .background(.white)
-                        .clipShape(Circle())
-                        .shadow(color: .shadowBlack.opacity(0.06), radius: 4)
-                    
-                    Spacer()
-                    
-                    Image.imgLogoCommon
-                    
-                    Spacer()
-                    
-                    Button(action: handleHelpIndicator) {
-                        Image.icHelpHeader
-                    }
-                }
-                .padding(.bottom, 24)
+                DinotisIntroTopBar()
                 
                 ScrollView {
                     Text(state == .login ? "Masuk Akun" : "Daftar Akun")
@@ -97,12 +82,14 @@ struct LoginView: View {
                             isCountriesShow = true
                         }) {
                             HStack {
-                                Text("🇮🇩 +62")
+                                Text(selectedCountry.field)
                                     .font(.robotoLight(size: 12))
                                     .foregroundColor(Color(hex: "#25282B"))
                                 
                                 Image.icDropdownAuth
                                     .padding(.trailing, -3)
+                                
+                                Divider()
                             }
                         }
                     })
@@ -185,71 +172,28 @@ struct LoginView: View {
                         handleLogin()
                     }
                 case .register:
-                    NavigationLink(destination: RoleView()) {
-                        DinotisPrimaryButton(text: "Kirim OTP", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: phone == "" || password == "") {
-                        }
+                    NavigationLink(destination: CreatorCreateAccountView(), isActive: $otpView) {EmptyView()}
+                    
+                    DinotisPrimaryButton(text: "Kirim OTP", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: phone == "") {
+                        otpView = true
                     }
                 }
             }
             .padding(.horizontal, 24)
             .sheet(isPresented: $isCountriesShow) {
-                VStack {
-                    HStack {
-                        Text("Pilih Negara")
-                            .font(.robotoBold(size: 14))
-                            .foregroundColor(Color(hex: "#413F48"))
-                        
-                        Spacer()
-                        
-                        Image(systemName: "xmark")
-                            .foregroundColor(Color(hex: "#413F48"))
-                    }
-                    
-                    DinotisPrimaryTextField("Cari negara", text: .constant(""), prefix: {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(Color(hex: "#3A3A3A"))
-                    })
-                    
-                    HStack {
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }) {
-                            Text("Reset Default")
-                                .font(.robotoBold(size: 12))
-                                .foregroundColor(Color.primaryPurple)
-                                .underline()
-                        }
-                    }
-                    .padding(.bottom, 13)
-                    
-                    ScrollView {
-                        HStack {
-                            Text("🇺🇸 Amerika")
-                                .font(.robotoLight(size: 14))
-                                .foregroundColor(Color(hex: "#52575C"))
-                            Spacer()
-                            Text("+1")
-                                .font(.robotoBold(size: 14))
-                                .foregroundColor(Color(hex: "#52575C"))
-                        }
-                    }
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 25)
-                
-                .presentationDetents([.medium, .large])
-                .presentationCornerRadius(28)
+                DinotisCountryPickerSheet(isSheetOpen: $isCountriesShow, selectedCountry: $selectedCountry)
+                    .presentationDetents([.medium, .large])
+                    .presentationCornerRadius(28)
             }
+            .navigationBarBackButtonHidden()
+            
+            DinotisAlertModal(title: "Berhasil!", bodyText: "Selamat anda berhasil login", isModalOpen: $isLoginSuccess)
         }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        CreatorAuthView()
     }
 }

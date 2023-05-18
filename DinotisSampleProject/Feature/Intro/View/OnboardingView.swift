@@ -39,65 +39,74 @@ struct OnboardingView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                Text("Lewati")
-                    .font(.robotoBold(size: 14))
-                    .foregroundColor(Color(hex: "#A0A4A8"))
-                    .padding(.trailing, 24)
-            }
+        ZStack {
+            Rectangle()
+                .fill(Color.backgroundPurple)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
             
-            Spacer()
-            
-            TabView(selection: $selectedIndex) {
-                Onboarding1View()
-                    .tag("0")
-                Onboarding2View()
-                    .tag("1")
-            }
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .padding(.horizontal, 20)
-            
-            HStack {
-                IndexTabViewComponent(currentId: $selectedIndex, id: "0", namespace: animation)
-                IndexTabViewComponent(currentId: $selectedIndex, id: "1", namespace: animation)
-            }
-            .padding(.top, -130)
-            
-            Spacer()
-            
-            HStack {
-                Button(action: {
-                    handleTabView(type: .back)
-                }) {
-                    Text("Sebelumnya")
-                        .font(.robotoBold(size: 14))
-                        .foregroundColor(Color(hex: "#A0A4A8"))
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    NavigationLink(destination: RoleView()) {
+                        Text("Lewati")
+                            .font(.robotoBold(size: 14))
+                            .foregroundColor(Color(hex: "#A0A4A8"))
+                            .padding(.trailing, 24)
+                    }
                 }
-                .isHidden(selectedIndex == "0")
                 
                 Spacer()
                 
-                NavigationLink(destination: RoleView()) {
-                    Text("Selanjutnya")
-                        .font(.robotoBold(size: 14))
-                        .foregroundColor(.primaryPurple)
+                TabView(selection: $selectedIndex) {
+                    Onboarding1View()
+                        .tag("0")
+                    Onboarding2View()
+                        .tag("1")
                 }
-                .isHidden((Int(selectedIndex) ?? 0) < 1, remove: (Int(selectedIndex) ?? 0) < 1)
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .padding(.horizontal, 20)
                 
-                Button(action: {
-                    handleTabView(type: .next)
-                }) {
-                    Text("Selanjutnya")
-                        .font(.robotoBold(size: 14))
-                        .foregroundColor(.primaryPurple)
+                HStack {
+                    IndexTabViewComponent(currentId: $selectedIndex, id: "0", namespace: animation)
+                    IndexTabViewComponent(currentId: $selectedIndex, id: "1", namespace: animation)
                 }
-                .isHidden((Int(selectedIndex) ?? 0) >= 1, remove: (Int(selectedIndex) ?? 0) >= 1)
+                .padding(.top, -130)
+                
+                Spacer()
+                
+                HStack {
+                    Button(action: {
+                        handleTabView(type: .back)
+                    }) {
+                        Text("Sebelumnya")
+                            .font(.robotoBold(size: 14))
+                            .foregroundColor(Color(hex: "#A0A4A8"))
+                    }
+                    .isHidden(selectedIndex == "0")
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: RoleView()) {
+                        Text("Selanjutnya")
+                            .font(.robotoBold(size: 14))
+                            .foregroundColor(.primaryPurple)
+                    }
+                    .isHidden((Int(selectedIndex) ?? 0) < 1, remove: (Int(selectedIndex) ?? 0) < 1)
+                    
+                    Button(action: {
+                        handleTabView(type: .next)
+                    }) {
+                        Text("Selanjutnya")
+                            .font(.robotoBold(size: 14))
+                            .foregroundColor(.primaryPurple)
+                    }
+                    .isHidden((Int(selectedIndex) ?? 0) >= 1, remove: (Int(selectedIndex) ?? 0) >= 1)
+                }
+                .padding(.horizontal, 24)
+                .padding(.bottom, 20)
             }
-            .padding(.horizontal, 24)
-            .padding(.bottom, 20)
         }
     }
 }

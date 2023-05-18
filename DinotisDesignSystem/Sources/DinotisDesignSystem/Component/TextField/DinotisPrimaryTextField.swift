@@ -39,9 +39,11 @@ public struct DinotisPrimaryTextField<Prefix: View, Suffix: View>: View {
                 if !secured {
                     TextField(title, text: $text)
                         .font(.robotoLight(size: 12))
+                        .accentColor(.primaryPurple)
                 } else {
                     SecureField(title, text: $text)
                         .font(.robotoLight(size: 12))
+                        .accentColor(.primaryPurple)
                 }
                 
                 

@@ -10,7 +10,8 @@
 		4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC4E2A1118B9005A0313 /* SplashView.swift */; };
 		4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC502A11255E005A0313 /* OnboardingView.swift */; };
 		4B84CC532A113674005A0313 /* RoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC522A113674005A0313 /* RoleView.swift */; };
-		4B84CC562A113F5B005A0313 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC552A113F5B005A0313 /* LoginView.swift */; };
+		4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */; };
+		4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */; };
 		4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */; };
 		4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223702A0F729F009F6142 /* Assets.xcassets */; };
 		4BB223742A0F729F009F6142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223732A0F729F009F6142 /* Preview Assets.xcassets */; };
@@ -44,7 +45,8 @@
 		4B84CC4E2A1118B9005A0313 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4B84CC502A11255E005A0313 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4B84CC522A113674005A0313 /* RoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleView.swift; sourceTree = "<group>"; };
-		4B84CC552A113F5B005A0313 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAuthView.swift; sourceTree = "<group>"; };
+		4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorCreateAccountView.swift; sourceTree = "<group>"; };
 		4BB223692A0F729E009F6142 /* DinotisSampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinotisSampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectApp.swift; sourceTree = "<group>"; };
 		4BB223702A0F729F009F6142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,9 +108,26 @@
 		4B84CC542A113F41005A0313 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4B84CC552A113F5B005A0313 /* LoginView.swift */,
+				4B8D73632A164A3900D833C5 /* View */,
+				4B8D73622A164A2600D833C5 /* Model */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		4B8D73622A164A2600D833C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B8D73632A164A3900D833C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */,
+				4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		4BB223602A0F729E009F6142 = {
@@ -354,10 +373,11 @@
 			files = (
 				4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */,
 				4BDE37992A12880A00D9CA8B /* MainView.swift in Sources */,
-				4B84CC562A113F5B005A0313 /* LoginView.swift in Sources */,
+				4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */,
 				4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */,
 				4B84CC532A113674005A0313 /* RoleView.swift in Sources */,
 				4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */,
+				4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */,
 				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

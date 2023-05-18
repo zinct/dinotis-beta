@@ -17,20 +17,19 @@ struct MainView: View {
 
     var body: some View {
         NavigationView {
-            LoginView()
-//            ZStack {
-//                SplashView()
-//                    .isHidden(!isLoading, remove: !isLoading)
-//                OnboardingView()
-//                    .isHidden(isLoading, remove: isLoading)
-//            }
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                    withAnimation(.default) {
-//                        isLoading = false
-//                    }
-//                }
-//            }
+            ZStack {
+                SplashView()
+                    .isHidden(!isLoading, remove: !isLoading)
+                OnboardingView()
+                    .isHidden(isLoading, remove: isLoading)
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.default) {
+                        isLoading = false
+                    }
+                }
+            }
         }
     }
 }
