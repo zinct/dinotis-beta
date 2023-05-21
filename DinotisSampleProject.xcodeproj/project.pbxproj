@@ -21,6 +21,8 @@
 		4BB2239B2A10706E009F6142 /* DinotisData in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB2239A2A10706E009F6142 /* DinotisData */; };
 		4BB2239F2A107429009F6142 /* DinotisDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB2239E2A107429009F6142 /* DinotisDesignSystem */; };
 		4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223A72A107ACE009F6142 /* HomeView.swift */; };
+		4BB223CB2A19BA59009F6142 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */; };
+		4BB223CE2A19BD11009F6142 /* AuthViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223CD2A19BD11009F6142 /* AuthViewState.swift */; };
 		4BDE37992A12880A00D9CA8B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE37982A12880A00D9CA8B /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		4BB223872A0F729F009F6142 /* DinotisSampleProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectUITests.swift; sourceTree = "<group>"; };
 		4BB223892A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4BB223A72A107ACE009F6142 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4BB223CD2A19BD11009F6142 /* AuthViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewState.swift; sourceTree = "<group>"; };
 		4BDE37982A12880A00D9CA8B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,7 @@
 		4B84CC542A113F41005A0313 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				4BB223C92A19BA2A009F6142 /* ViewModel */,
 				4B8D73632A164A3900D833C5 /* View */,
 				4B8D73622A164A2600D833C5 /* Model */,
 			);
@@ -208,6 +213,7 @@
 		4BB223A22A107A44009F6142 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4BB223CC2A19BD06009F6142 /* Enum */,
 				4BB223A32A107A54009F6142 /* Resources */,
 			);
 			path = Common;
@@ -235,6 +241,22 @@
 				4BB223A72A107ACE009F6142 /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4BB223C92A19BA2A009F6142 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4BB223CC2A19BD06009F6142 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				4BB223CD2A19BD11009F6142 /* AuthViewState.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,8 +399,10 @@
 				4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */,
 				4B84CC532A113674005A0313 /* RoleView.swift in Sources */,
 				4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */,
+				4BB223CE2A19BD11009F6142 /* AuthViewState.swift in Sources */,
 				4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */,
 				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
+				4BB223CB2A19BA59009F6142 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

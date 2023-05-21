@@ -8,47 +8,9 @@
 import SwiftUI
 import DinotisDesignSystem
 
-enum AuthViewState {
-    case login, register
-}
-
-
-let phoneDesired = "81395749557"
-let passwordDesired = "admin"
-
 struct CreatorAuthView: View {
-    @State private var phone = ""
-    @State private var password = ""
-    @State private var state = AuthViewState.login
     
-    @State private var isPhoneError = false
-    @State private var isPasswordError = false
-    @State private var isCountriesShow = false
-    @State private var isPasswordShow = false
-    @State private var otpView = false
-    @State private var isLoginSuccess = false
-    
-    @State private var selectedCountry = Country.getAll()[0]
-    
-    func handleLogin() {
-        if phone != phoneDesired {
-            isPhoneError = true
-        } else {
-            isPhoneError = false
-        }
-        
-        if password != passwordDesired {
-            isPasswordError = true
-        } else {
-            isPasswordError = false
-        }
-        
-        if phone == phoneDesired && password == passwordDesired {
-            withAnimation {
-                isLoginSuccess = true                
-            }
-        }
-    }
+    @ObservedObject var viewModel: AuthViewModel = AuthViewModel()
     
     var body: some View {
         ZStack {
@@ -61,56 +23,63 @@ struct CreatorAuthView: View {
                 DinotisIntroTopBar()
                 
                 ScrollView {
-                    Text(state == .login ? "Masuk Akun" : "Daftar Akun")
+                    Text(viewModel.state == .login ? LocalizableText.loginTitle : LocalizableText.registerTitle)
                         .font(.robotoBold(size: 28))
                         .foregroundColor(Color(hex: "#25282B"))
                     
-                    Text(state == .login ? "Silahkan masukan nomor handphone & kata sandi akun anda yang telah terdaftar untuk masuk ke aplikasi" : "Masukan nomor handphone yang valid untuk mendapatkan kode OTP")
+                    Text(viewModel.state == .login ? "Silahkan masukan nomor handphone & kata sandi akun anda yang telah terdaftar untuk masuk ke aplikasi" : "Masukan nomor handphone yang valid untuk mendapatkan kode OTP")
                         .font(.robotoLight(size: 12))
                         .foregroundColor(Color(hex: "#52575C"))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 25)
                     
-                    DinotisPrimaryTextField("Masukan nomor handphone", text: $phone, validator: {
-                        if isPhoneError {
-                            return "*Nomor telepon yang anda masukan belum terdaftar"
-                        }
+                    DinotisPrimaryTextField(
+                        "Masukan nomor handphone",
+                        text: $viewModel.phone,
+                        validator: {
+                            if viewModel.isPhoneError {
+                                return "*Nomor telepon yang anda masukan belum terdaftar"
+                            }
                         
                         return nil
-                    }, prefix: {
-                        Button(action: {
-                            isCountriesShow = true
-                        }) {
-                            HStack {
-                                Text(selectedCountry.field)
-                                    .font(.robotoLight(size: 12))
-                                    .foregroundColor(Color(hex: "#25282B"))
-                                
-                                Image.icDropdownAuth
-                                    .padding(.trailing, -3)
-                                
-                                Divider()
+                        }, prefix: {
+                            Button(action: {
+                                viewModel.isCountriesShow = true
+                            }) {
+                                HStack {
+                                    Text(viewModel.selectedCountry.field)
+                                        .font(.robotoLight(size: 12))
+                                        .foregroundColor(Color(hex: "#25282B"))
+                                    
+                                    Image.icDropdownAuth
+                                        .padding(.trailing, -3)
+                                    
+                                    Divider()
+                                }
                             }
-                        }
-                    })
+                        })
                     .padding(.bottom, 5)
                     
-                    DinotisPrimaryTextField("Masukan kata sandi", text: $password, secured: !isPasswordShow, validator: {
-                        if isPasswordError {
-                            return "*Kata sandi yang anda masukan salah"
-                        }
-                        
-                        return nil
+                    DinotisPrimaryTextField(
+                        "Masukan kata sandi",
+                        text: $viewModel.password,
+                        secured: !viewModel.isPasswordShow,
+                        validator: {
+                            if viewModel.isPasswordError {
+                                return "*Kata sandi yang anda masukan salah"
+                            }
+                            
+                            return nil
                         }, suffix: {
-                        Button(action: {
-                            isPasswordShow.toggle()
-                        }) {
-                            Image(systemName: !isPasswordShow ? "eye.fill" : "eye.slash.fill")
-                                .foregroundColor(Color.secondary)
-                        }
+                            Button(action: {
+                                viewModel.isPasswordShow.toggle()
+                            }) {
+                                Image(systemName: !viewModel.isPasswordShow ? "eye.fill" : "eye.slash.fill")
+                                    .foregroundColor(Color.secondary)
+                            }
                     })
                     .padding(.bottom, 10)
-                    .isHidden(state == .register, remove: state == .register)
+                    .isHidden(viewModel.state == .register, remove: viewModel.state == .register)
                     
                     HStack {
                         Spacer()
@@ -125,7 +94,7 @@ struct CreatorAuthView: View {
                         }
                     }
                     .padding(.bottom, 13)
-                    .isHidden(state == .register, remove: state == .register)
+                    .isHidden(viewModel.state == .register, remove: viewModel.state == .register)
                     
                     Group {
                         Text("Ketika masuk, Anda menyetujui ") +
@@ -141,21 +110,21 @@ struct CreatorAuthView: View {
                     .padding(.bottom, 10)
                     
                     HStack {
-                        Text(state == .login ? "Belum punya akun?" : "sudah punya akun?")
+                        Text(viewModel.state == .login ? "Belum punya akun?" : "sudah punya akun?")
                             .font(.robotoRegular(size: 12))
                             .foregroundColor(Color(hex: "#52575C"))
                             .multilineTextAlignment(.center)
                         
                         Button(action: {
                             withAnimation {
-                                if state == .login {
-                                    state = .register
+                                if viewModel.state == .login {
+                                    viewModel.state = .register
                                 } else {
-                                    state = .login
+                                    viewModel.state = .login
                                 }
                             }
                         }) {
-                            Text(state == .login ? "Daftar di sini" : "Masuk di sini")
+                            Text(viewModel.state == .login ? "Daftar di sini" : "Masuk di sini")
                                 .font(.robotoBold(size: 12))
                                 .foregroundColor(Color.primaryPurple)
                                 .multilineTextAlignment(.center)
@@ -166,28 +135,28 @@ struct CreatorAuthView: View {
                 
                 Spacer()
                 
-                switch state {
+                switch viewModel.state {
                 case .login:
-                    DinotisPrimaryButton(text: "Masuk", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: phone == "" || password == "") {
-                        handleLogin()
+                    DinotisPrimaryButton(text: "Masuk", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "" || viewModel.password == "") {
+                        viewModel.handleLogin()
                     }
                 case .register:
-                    NavigationLink(destination: CreatorCreateAccountView(), isActive: $otpView) {EmptyView()}
+                    NavigationLink(destination: CreatorCreateAccountView(), isActive: $viewModel.otpView) {EmptyView()}
                     
-                    DinotisPrimaryButton(text: "Kirim OTP", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: phone == "") {
-                        otpView = true
+                    DinotisPrimaryButton(text: "Kirim OTP", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "") {
+                        viewModel.otpView = true
                     }
                 }
             }
             .padding(.horizontal, 24)
-            .sheet(isPresented: $isCountriesShow) {
-                DinotisCountryPickerSheet(isSheetOpen: $isCountriesShow, selectedCountry: $selectedCountry)
+            .sheet(isPresented: $viewModel.isCountriesShow) {
+                DinotisCountryPickerSheet(isSheetOpen: $viewModel.isCountriesShow, selectedCountry: $viewModel.selectedCountry)
                     .presentationDetents([.medium, .large])
                     .presentationCornerRadius(28)
             }
             .navigationBarBackButtonHidden()
             
-            DinotisAlertModal(title: "Berhasil!", bodyText: "Selamat anda berhasil login", isModalOpen: $isLoginSuccess)
+            DinotisAlertModal(title: "Berhasil!", bodyText: "Selamat anda berhasil login", isModalOpen: $viewModel.isLoginSuccess)
         }
     }
 }

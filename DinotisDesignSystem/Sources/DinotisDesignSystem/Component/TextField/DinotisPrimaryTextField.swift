@@ -77,7 +77,22 @@ struct DinotisPrimaryTextField_Previews: PreviewProvider {
         
         var body: some View {
             VStack {
+                DinotisPrimaryTextField("Haloo", text: $phone)
                 
+                DinotisPrimaryTextField(
+                    "Text Field 2",
+                    text: $phone,
+                    secured: false) {
+                        "Error"
+                    } prefix: {
+                        Image.imgCreatorsRole
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 32)
+                    } suffix: {
+                        Text("Yoiiii")
+                    }
+
             }
         }
     }

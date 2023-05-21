@@ -7,3 +7,5 @@
 */
 
 "test_title" = "Ini Adalah Judul Test";
+"login_title" = "Masuk Akun";
+"register_title" = "Daftar Akun";

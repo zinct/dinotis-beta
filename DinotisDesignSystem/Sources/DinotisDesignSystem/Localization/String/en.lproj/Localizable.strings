@@ -7,3 +7,5 @@
 */
 
 "test_title" = "This is Test Title";
+"login_title" = "Login Account";
+"register_title" = "Register Account";
