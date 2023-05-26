@@ -9,16 +9,7 @@ import SwiftUI
 import DinotisDesignSystem
 
 struct CreatorCreateAccountView: View {
-    @State private var name = ""
-    @State private var password = ""
-    @State private var passwordAgain = ""
-    
-    @State private var isCountriesShow = false
-    @State private var isSuccessModalShow = false
-    @State private var isPasswordShow = false
-    @State private var isPasswordAgainShow = false
-
-    @State private var selectedCountry: Country = Country.getAll()[0]
+    @ObservedObject var viewModel: CreatorCreateAccountViewModel = CreatorCreateAccountViewModel()
     
     var body: some View {
         ZStack {
@@ -33,18 +24,18 @@ struct CreatorCreateAccountView: View {
                 ScrollView {
                     Text("Lengkapi Data Diri")
                         .font(.robotoBold(size: 28))
-                        .foregroundColor(Color(hex: "#25282B"))
+                        .foregroundColor(.primaryBlack)
                         .padding(.bottom, 20)
                     
                     Group {
                         HStack {
                             Text("Nama")
                                 .font(.robotoRegular(size: 12))
-                                .foregroundColor(Color(hex: "#25282B"))
+                                .foregroundColor(.primaryBlack)
                             Spacer()
                         }
                         
-                        DinotisPrimaryTextField("Masukan nama", text: $name)
+                        DinotisPrimaryTextField("Masukan nama", text: $viewModel.name)
                             .padding(.bottom, 10)
                     }
                     
@@ -52,15 +43,15 @@ struct CreatorCreateAccountView: View {
                         HStack {
                             Text("Kata Sandi")
                                 .font(.robotoRegular(size: 12))
-                                .foregroundColor(Color(hex: "#25282B"))
+                                .foregroundColor(.primaryBlack)
                             Spacer()
                         }
                         
-                        DinotisPrimaryTextField("Masukan kata sandi", text: $password, secured: !isPasswordShow, suffix: {
+                        DinotisPrimaryTextField(LocalizableText.passwordPlaceholder, text: $viewModel.password, secured: !viewModel.isPasswordShow, suffix: {
                             Button(action: {
-                                isPasswordShow.toggle()
+                                viewModel.isPasswordShow.toggle()
                             }) {
-                                Image(systemName: !isPasswordShow ? "eye.fill" : "eye.slash.fill")
+                                Image(systemName: !viewModel.isPasswordShow ? "eye.fill" : "eye.slash.fill")
                                     .foregroundColor(Color.secondary)
                             }
                         })
@@ -75,11 +66,11 @@ struct CreatorCreateAccountView: View {
                             Spacer()
                         }
                         
-                        DinotisPrimaryTextField("Ulangi kata sandi", text: $passwordAgain, secured: !isPasswordAgainShow, suffix: {
+                        DinotisPrimaryTextField("Ulangi kata sandi", text: $viewModel.passwordAgain, secured: !viewModel.isPasswordAgainShow, suffix: {
                             Button(action: {
-                                isPasswordAgainShow.toggle()
+                                viewModel.isPasswordAgainShow.toggle()
                             }) {
-                                Image(systemName: !isPasswordAgainShow ? "eye.fill" : "eye.slash.fill")
+                                Image(systemName: !viewModel.isPasswordAgainShow ? "eye.fill" : "eye.slash.fill")
                                     .foregroundColor(Color.secondary)
                             }
                         })
@@ -91,20 +82,20 @@ struct CreatorCreateAccountView: View {
                 
                 DinotisPrimaryButton(text: "Simpan", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple) {
                     withAnimation {
-                        isSuccessModalShow = true
+                        viewModel.isSuccessModalShow = true
                     }
                 }
-                .disabled(name == "" || password == "" || passwordAgain == "")
+                .disabled(viewModel.name == "" || viewModel.password == "" || viewModel.passwordAgain == "")
             }
             .padding(.horizontal, 24)
-            .sheet(isPresented: $isCountriesShow) {
-                DinotisCountryPickerSheet(isSheetOpen: $isCountriesShow, selectedCountry: $selectedCountry)
+            .sheet(isPresented: $viewModel.isCountriesShow) {
+                DinotisCountryPickerSheet(isSheetOpen: $viewModel.isCountriesShow, selectedCountry: $viewModel.selectedCountry)
                     .presentationDetents([.medium, .large])
                     .presentationCornerRadius(28)
             }
             .navigationBarBackButtonHidden()
             
-            DinotisAlertModal(title: "Data Diri Berhasil Disimpan", bodyText: "Terima kasih telah melengkapi data diri kamu", isModalOpen: $isSuccessModalShow)
+            DinotisAlertModal(title: "Data Diri Berhasil Disimpan", bodyText: "Terima kasih telah melengkapi data diri kamu", isModalOpen: $viewModel.isSuccessModalShow)
         }
     }
 }

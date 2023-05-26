@@ -13,10 +13,6 @@ enum TabViewType {
 }
 
 struct OnboardingView: View {
-    init() {
-        FontInjector.registerFonts()
-    }
-
     @State private var selectedIndex = "0"
     @Namespace private var animation
     
@@ -50,9 +46,9 @@ struct OnboardingView: View {
                     Spacer()
                     
                     NavigationLink(destination: RoleView()) {
-                        Text("Lewati")
+                        Text(LocalizableText.skip)
                             .font(.robotoBold(size: 14))
-                            .foregroundColor(Color(hex: "#A0A4A8"))
+                            .foregroundColor(.primaryGrey)
                             .padding(.trailing, 24)
                     }
                 }
@@ -80,16 +76,16 @@ struct OnboardingView: View {
                     Button(action: {
                         handleTabView(type: .back)
                     }) {
-                        Text("Sebelumnya")
+                        Text(LocalizableText.next)
                             .font(.robotoBold(size: 14))
-                            .foregroundColor(Color(hex: "#A0A4A8"))
+                            .foregroundColor(.primaryGrey)
                     }
                     .isHidden(selectedIndex == "0")
                     
                     Spacer()
                     
                     NavigationLink(destination: RoleView()) {
-                        Text("Selanjutnya")
+                        Text(LocalizableText.next)
                             .font(.robotoBold(size: 14))
                             .foregroundColor(.primaryPurple)
                     }
@@ -98,7 +94,7 @@ struct OnboardingView: View {
                     Button(action: {
                         handleTabView(type: .next)
                     }) {
-                        Text("Selanjutnya")
+                        Text(LocalizableText.next)
                             .font(.robotoBold(size: 14))
                             .foregroundColor(.primaryPurple)
                     }
@@ -127,15 +123,15 @@ struct Onboarding1View: View {
                 .padding(.bottom, -23)
             
             VStack {
-                Text("Ngobrol bareng Kreator Hebat!")
+                Text(LocalizableText.onboard1Title)
                     .font(.robotoBold(size: 20))
                     .padding(.bottom, 7)
-                    .foregroundColor(Color(hex: "#25282B"))
+                    .foregroundColor(.primaryBlack)
                 
-                Text("Ketemuan dengan kreator hebat dari berbagai bidang? hanya disini tempatnya")
+                Text(LocalizableText.onboard1Body)
                     .font(.robotoRegular(size: 14))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(hex: "#52575C"))
+                    .foregroundColor(.secondaryBlack)
             }
             .padding(.horizontal, 46)
         }
@@ -152,15 +148,15 @@ struct Onboarding2View: View {
                 .padding(.bottom, -23)
             
             VStack {
-                Text("Kapan saja dan di mana saja")
+                Text(LocalizableText.onboard2Title)
                     .font(.robotoBold(size: 20))
                     .padding(.bottom, 7)
-                    .foregroundColor(Color(hex: "#25282B"))
+                    .foregroundColor(.primaryBlack)
                 
-                Text("Denger suara doang emang puas? Kalau ngobrol di sini bisa sambil tatap-tatapan!")
+                Text(LocalizableText.onboard2Body)
                     .font(.robotoRegular(size: 14))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(hex: "#52575C"))
+                    .foregroundColor(.primaryBlack)
             }
             .padding(.horizontal, 46)
         }

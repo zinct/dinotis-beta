@@ -6,6 +6,59 @@
   
 */
 
-"test_title" = "This is Test Title";
-"login_title" = "Login Account";
-"register_title" = "Register Account";
+// Common
+"next" = "Selanjutnya";
+"back" = "Sebelumnya";
+"skip" = "Lewati";
+"audiens" = "Audiens";
+"creators" = "Kreatos";
+"creators_description" = "Mulai ngobrol dengan kreator";
+"audiens_description" = "Mulai ngobrol dengan Audiens";
+
+"test_title" = "Ini Adalah Judul Test";
+
+"login_title" = "Masuk Akun";
+"login_body" = "Silahkan masukan nomor handphone & kata sandi akun anda yang telah terdaftar untuk masuk ke aplikasi";
+"register_title" = "Daftar Akun";
+"register_body" = "Masukan nomor handphone yang valid untuk mendapatkan kode OTP";
+"forgot_password" = "Lupa Password?";
+"choose_country" = "Pilih Negara";
+"search_country" = "Cari Negara";
+"reset_default" = "Reset Default";
+"dont_have_account" = "Belum Punya Akun?";
+"already_have_account" = "Sudah punya akun?";
+"register_here" = "Daftar di sini";
+"login_here" = "Masuk di sini";
+"send_otp" = "Kirim OTP";
+"otp_title" = "Masukan kode OTP yang dikirim ke nomor";
+"otp_dont_sended" = "Kode OTP belum masuk?";
+
+// Placeholder
+"phone_placeholder" = "Masukan nomor handphone";
+"password_placeholder" = "Masukan password";
+
+// Onboaring
+"onboard1_title" = "Ngobrol bareng Kreator Hebat!";
+"onboard1_body" = "Ketemuan dengan kreator hebat dari berbagai bidang? hanya disini tempatnya";
+"onboard2_title" = "Kapan saja dan di mana saja";
+"onboard2_body" = "Denger suara doang emang puas? Kalau ngobrol di sini bisa sambil tatap-tatapan!";
+
+// Role
+"role_title" = "Berbagai sesi menarik untukmu";
+"role_select" = "Silahkan pilih tipe akun yang sesuai untukmu!";
+
+// Agenda
+"total_price" = "Total Price";
+"pay_now" = "Bayar Sekarang";
+"show" = "Lihat";
+"all" = "Semua";
+"agenda_pending" = "Menunggu Pembayaran";
+"agenda_upcoming" = "Akan Datang";
+"agenda_done" = "Selesai";
+"agenda_cancel" = "Dibatalkan";
+"agenda_today" = "Agenda Hari Ini";
+
+// OTP
+"otp_title" = "Masukan kode OTP yang dikirim ke nomor";
+"otp_not_sended" = "Kode OTP belum masuk?";
+"send_again" = "kirim ulang?";
