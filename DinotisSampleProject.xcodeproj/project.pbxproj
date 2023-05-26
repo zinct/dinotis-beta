@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B479F4A2A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */; };
+		4B479F4C2A21029200AE235F /* OtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F4B2A21029200AE235F /* OtpView.swift */; };
+		4B479F4E2A21148F00AE235F /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F4D2A21148F00AE235F /* OtpViewModel.swift */; };
+		4B50F5DA2A1FA4990074E623 /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50F5D92A1FA4990074E623 /* AgendaView.swift */; };
+		4B50F60D2A1FBA0F0074E623 /* AgendaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50F60C2A1FBA0F0074E623 /* AgendaViewModel.swift */; };
 		4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC4E2A1118B9005A0313 /* SplashView.swift */; };
 		4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC502A11255E005A0313 /* OnboardingView.swift */; };
 		4B84CC532A113674005A0313 /* RoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC522A113674005A0313 /* RoleView.swift */; };
 		4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */; };
 		4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */; };
+		4B9130CC2A20DB870010409A /* UserSession+getData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9130CB2A20DB870010409A /* UserSession+getData.swift */; };
 		4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */; };
 		4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223702A0F729F009F6142 /* Assets.xcassets */; };
 		4BB223742A0F729F009F6142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223732A0F729F009F6142 /* Preview Assets.xcassets */; };
@@ -44,11 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorCreateAccountViewModel.swift; sourceTree = "<group>"; };
+		4B479F4B2A21029200AE235F /* OtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpView.swift; sourceTree = "<group>"; };
+		4B479F4D2A21148F00AE235F /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtpViewModel.swift; path = ../../../../../../../../../../Applications/OtpViewModel.swift; sourceTree = "<group>"; };
+		4B50F5D92A1FA4990074E623 /* AgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
+		4B50F60C2A1FBA0F0074E623 /* AgendaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewModel.swift; sourceTree = "<group>"; };
 		4B84CC4E2A1118B9005A0313 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4B84CC502A11255E005A0313 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4B84CC522A113674005A0313 /* RoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleView.swift; sourceTree = "<group>"; };
 		4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAuthView.swift; sourceTree = "<group>"; };
 		4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorCreateAccountView.swift; sourceTree = "<group>"; };
+		4B9130CB2A20DB870010409A /* UserSession+getData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSession+getData.swift"; sourceTree = "<group>"; };
 		4BB223692A0F729E009F6142 /* DinotisSampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinotisSampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectApp.swift; sourceTree = "<group>"; };
 		4BB223702A0F729F009F6142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +103,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B50F5D72A1FA4860074E623 /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				4B50F60B2A1FB9FB0074E623 /* ViewModel */,
+				4B50F5D82A1FA48D0074E623 /* View */,
+			);
+			path = Agenda;
+			sourceTree = "<group>";
+		};
+		4B50F5D82A1FA48D0074E623 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B50F5D92A1FA4990074E623 /* AgendaView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B50F60B2A1FB9FB0074E623 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B50F60C2A1FBA0F0074E623 /* AgendaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4B84CC4B2A11189A005A0313 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,8 +168,17 @@
 			children = (
 				4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */,
 				4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */,
+				4B479F4B2A21029200AE235F /* OtpView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4B9130CA2A20DB6F0010409A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B9130CB2A20DB870010409A /* UserSession+getData.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4BB223602A0F729E009F6142 = {
@@ -201,6 +247,7 @@
 		4BB223A12A107A3E009F6142 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				4B50F5D72A1FA4860074E623 /* Agenda */,
 				4B84CC542A113F41005A0313 /* Auth */,
 				4B84CC4B2A11189A005A0313 /* Intro */,
 				4BB223A42A107AA9009F6142 /* Home */,
@@ -213,6 +260,7 @@
 		4BB223A22A107A44009F6142 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4B9130CA2A20DB6F0010409A /* Extensions */,
 				4BB223CC2A19BD06009F6142 /* Enum */,
 				4BB223A32A107A54009F6142 /* Resources */,
 			);
@@ -247,6 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */,
+				4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */,
+				4B479F4D2A21148F00AE235F /* OtpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,13 +445,19 @@
 			files = (
 				4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */,
 				4BDE37992A12880A00D9CA8B /* MainView.swift in Sources */,
+				4B479F4A2A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift in Sources */,
 				4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */,
 				4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */,
 				4B84CC532A113674005A0313 /* RoleView.swift in Sources */,
 				4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */,
 				4BB223CE2A19BD11009F6142 /* AuthViewState.swift in Sources */,
 				4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */,
+				4B50F60D2A1FBA0F0074E623 /* AgendaViewModel.swift in Sources */,
+				4B9130CC2A20DB870010409A /* UserSession+getData.swift in Sources */,
+				4B479F4C2A21029200AE235F /* OtpView.swift in Sources */,
+				4B479F4E2A21148F00AE235F /* OtpViewModel.swift in Sources */,
 				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
+				4B50F5DA2A1FA4990074E623 /* AgendaView.swift in Sources */,
 				4BB223CB2A19BA59009F6142 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

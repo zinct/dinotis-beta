@@ -66,7 +66,7 @@ public struct DinotisAlertModal: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct DinotisAlertModal_Previews: PreviewProvider {
     static var previews: some View {
         DinotisAlertModal(title: "Data diri berhasil disimpan", bodyText: "This is body", isModalOpen: .constant(true))
     }

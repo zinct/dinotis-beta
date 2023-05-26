@@ -7,25 +7,27 @@
 
 import SwiftUI
 
-public struct UserSession {
-    var id: String?
-    var date: String?
-    var status: String?
-    var title: String?
-    var description: String?
-    var price: String?
-    var image: Image?
+public enum UserSessionStatus {
+    case pending, upcoming, waiting, done, cancel
+}
+
+public struct UserSession: Identifiable {
+    public let id = UUID()
+    public var date: String?
+    public var status: UserSessionStatus?
+    public var title: String?
+    public var description: String?
+    public var price: String?
+    public var image: Image?
     
     public init(
-        id: String? = nil,
         date: String? = nil,
-        status: String? = nil,
+        status: UserSessionStatus? = nil,
         title: String? = nil,
         description: String? = nil,
         price: String? = nil,
         image: Image?
     ) {
-        self.id = id
         self.date = date
         self.status = status
         self.title = title

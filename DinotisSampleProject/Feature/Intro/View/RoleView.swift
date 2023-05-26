@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DinotisDesignSystem
 
 struct RoleView: View {
     var body: some View {
@@ -22,13 +23,13 @@ struct RoleView: View {
                     .padding(.bottom, 20)
                 
                 VStack(alignment: .leading) {
-                    Text("Berbagai sesi menarik untukmu")
+                    Text(LocalizableText.roleTitle)
                         .font(.robotoBold(size: 34))
                         .padding(.bottom, 25)
                     
-                    Text("Silahkan pilih tipe akun yang sesuai untukmu!")
+                    Text(LocalizableText.roleSelect)
                         .font(.robotoBold(size: 16))
-                        .foregroundColor(Color(hex: "#52575C"))
+                        .foregroundColor(.primaryGrey)
                         .padding(.bottom, 17)
                     
                     NavigationLink(destination: CreatorAuthView()) {
@@ -40,11 +41,11 @@ struct RoleView: View {
                                 .padding(.bottom, 10)
                             
                             VStack(alignment: .leading) {
-                                Text("Audiens")
+                                Text(LocalizableText.audiens)
                                     .font(.robotoBold(size: 20))
                                     .foregroundColor(.white)
                                 
-                                Text("Mulai ngobrol dengan kreator")
+                                Text(LocalizableText.audiensDescription)
                                     .font(.robotoRegular(size: 12))
                                     .foregroundColor(.white)
                             }
@@ -71,11 +72,11 @@ struct RoleView: View {
                                 .padding(.leading, 7)
                             
                             VStack(alignment: .leading) {
-                                Text("Kreators")
+                                Text(LocalizableText.creators)
                                     .font(.robotoBold(size: 20))
                                     .foregroundColor(.white)
                                 
-                                Text("Mulai ngobrol dengan Audiens")
+                                Text(LocalizableText.creatorsDescription)
                                     .font(.robotoRegular(size: 12))
                                     .foregroundColor(.white)
                             }

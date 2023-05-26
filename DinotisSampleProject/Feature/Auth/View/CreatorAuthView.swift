@@ -25,16 +25,16 @@ struct CreatorAuthView: View {
                 ScrollView {
                     Text(viewModel.state == .login ? LocalizableText.loginTitle : LocalizableText.registerTitle)
                         .font(.robotoBold(size: 28))
-                        .foregroundColor(Color(hex: "#25282B"))
+                        .foregroundColor(.primaryBlack)
                     
-                    Text(viewModel.state == .login ? "Silahkan masukan nomor handphone & kata sandi akun anda yang telah terdaftar untuk masuk ke aplikasi" : "Masukan nomor handphone yang valid untuk mendapatkan kode OTP")
+                    Text(viewModel.state == .login ? LocalizableText.loginBody : LocalizableText.registerBody)
                         .font(.robotoLight(size: 12))
-                        .foregroundColor(Color(hex: "#52575C"))
+                        .foregroundColor(.secondaryBlack)
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 25)
                     
                     DinotisPrimaryTextField(
-                        "Masukan nomor handphone",
+                        LocalizableText.phonePlaceholder,
                         text: $viewModel.phone,
                         validator: {
                             if viewModel.isPhoneError {
@@ -49,7 +49,7 @@ struct CreatorAuthView: View {
                                 HStack {
                                     Text(viewModel.selectedCountry.field)
                                         .font(.robotoLight(size: 12))
-                                        .foregroundColor(Color(hex: "#25282B"))
+                                        .foregroundColor(Color.secondaryBlack)
                                     
                                     Image.icDropdownAuth
                                         .padding(.trailing, -3)
@@ -61,7 +61,7 @@ struct CreatorAuthView: View {
                     .padding(.bottom, 5)
                     
                     DinotisPrimaryTextField(
-                        "Masukan kata sandi",
+                        LocalizableText.passwordPlaceholder,
                         text: $viewModel.password,
                         secured: !viewModel.isPasswordShow,
                         validator: {
@@ -87,7 +87,7 @@ struct CreatorAuthView: View {
                         Button(action: {
                             
                         }) {
-                            Text("Lupa Kata Sandi")
+                            Text(LocalizableText.forgotPassword)
                                 .font(.robotoBold(size: 12))
                                 .foregroundColor(Color.primaryPurple)
                                 .underline()
@@ -106,13 +106,13 @@ struct CreatorAuthView: View {
                     }
                     .font(.robotoRegular(size: 10))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(hex: "#A0A4A8"))
+                    .foregroundColor(.primaryGrey)
                     .padding(.bottom, 10)
                     
                     HStack {
-                        Text(viewModel.state == .login ? "Belum punya akun?" : "sudah punya akun?")
+                        Text(viewModel.state == .login ? LocalizableText.dontHaveAccount : LocalizableText.alreadyGaveAccount)
                             .font(.robotoRegular(size: 12))
-                            .foregroundColor(Color(hex: "#52575C"))
+                            .foregroundColor(.primaryGrey)
                             .multilineTextAlignment(.center)
                         
                         Button(action: {
@@ -124,7 +124,7 @@ struct CreatorAuthView: View {
                                 }
                             }
                         }) {
-                            Text(viewModel.state == .login ? "Daftar di sini" : "Masuk di sini")
+                            Text(viewModel.state == .login ? LocalizableText.registerHere : LocalizableText.loginHere)
                                 .font(.robotoBold(size: 12))
                                 .foregroundColor(Color.primaryPurple)
                                 .multilineTextAlignment(.center)
@@ -141,9 +141,9 @@ struct CreatorAuthView: View {
                         viewModel.handleLogin()
                     }
                 case .register:
-                    NavigationLink(destination: CreatorCreateAccountView(), isActive: $viewModel.otpView) {EmptyView()}
+                    NavigationLink(destination: OtpView(), isActive: $viewModel.otpView) {EmptyView()}
                     
-                    DinotisPrimaryButton(text: "Kirim OTP", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "") {
+                    DinotisPrimaryButton(text: LocalizableText.sendOtp, type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "") {
                         viewModel.otpView = true
                     }
                 }
