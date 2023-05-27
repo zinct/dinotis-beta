@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B479F4A2A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */; };
 		4B479F4C2A21029200AE235F /* OtpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F4B2A21029200AE235F /* OtpView.swift */; };
-		4B479F4E2A21148F00AE235F /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B479F4D2A21148F00AE235F /* OtpViewModel.swift */; };
 		4B50F5DA2A1FA4990074E623 /* AgendaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50F5D92A1FA4990074E623 /* AgendaView.swift */; };
 		4B50F60D2A1FBA0F0074E623 /* AgendaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50F60C2A1FBA0F0074E623 /* AgendaViewModel.swift */; };
 		4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC4E2A1118B9005A0313 /* SplashView.swift */; };
@@ -18,6 +17,9 @@
 		4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */; };
 		4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */; };
 		4B9130CC2A20DB870010409A /* UserSession+getData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9130CB2A20DB870010409A /* UserSession+getData.swift */; };
+		4BA19E422A2278210001A789 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA19E412A2278210001A789 /* OtpViewModel.swift */; };
+		4BA19E432A2278210001A789 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA19E412A2278210001A789 /* OtpViewModel.swift */; };
+		4BA19E442A2278210001A789 /* OtpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA19E412A2278210001A789 /* OtpViewModel.swift */; };
 		4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */; };
 		4BB223712A0F729F009F6142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223702A0F729F009F6142 /* Assets.xcassets */; };
 		4BB223742A0F729F009F6142 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB223732A0F729F009F6142 /* Preview Assets.xcassets */; };
@@ -52,7 +54,6 @@
 /* Begin PBXFileReference section */
 		4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorCreateAccountViewModel.swift; sourceTree = "<group>"; };
 		4B479F4B2A21029200AE235F /* OtpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpView.swift; sourceTree = "<group>"; };
-		4B479F4D2A21148F00AE235F /* OtpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OtpViewModel.swift; path = ../../../../../../../../../../Applications/OtpViewModel.swift; sourceTree = "<group>"; };
 		4B50F5D92A1FA4990074E623 /* AgendaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaView.swift; sourceTree = "<group>"; };
 		4B50F60C2A1FBA0F0074E623 /* AgendaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewModel.swift; sourceTree = "<group>"; };
 		4B84CC4E2A1118B9005A0313 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		4B84CC552A113F5B005A0313 /* CreatorAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorAuthView.swift; sourceTree = "<group>"; };
 		4B8D73662A16871300D833C5 /* CreatorCreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorCreateAccountView.swift; sourceTree = "<group>"; };
 		4B9130CB2A20DB870010409A /* UserSession+getData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserSession+getData.swift"; sourceTree = "<group>"; };
+		4BA19E412A2278210001A789 /* OtpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpViewModel.swift; sourceTree = "<group>"; };
 		4BB223692A0F729E009F6142 /* DinotisSampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinotisSampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB2236C2A0F729E009F6142 /* DinotisSampleProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinotisSampleProjectApp.swift; sourceTree = "<group>"; };
 		4BB223702A0F729F009F6142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,7 +298,7 @@
 			children = (
 				4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */,
 				4B479F492A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift */,
-				4B479F4D2A21148F00AE235F /* OtpViewModel.swift */,
+				4BA19E412A2278210001A789 /* OtpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -455,7 +457,7 @@
 				4B50F60D2A1FBA0F0074E623 /* AgendaViewModel.swift in Sources */,
 				4B9130CC2A20DB870010409A /* UserSession+getData.swift in Sources */,
 				4B479F4C2A21029200AE235F /* OtpView.swift in Sources */,
-				4B479F4E2A21148F00AE235F /* OtpViewModel.swift in Sources */,
+				4BA19E422A2278210001A789 /* OtpViewModel.swift in Sources */,
 				4BB2236D2A0F729E009F6142 /* DinotisSampleProjectApp.swift in Sources */,
 				4B50F5DA2A1FA4990074E623 /* AgendaView.swift in Sources */,
 				4BB223CB2A19BA59009F6142 /* AuthViewModel.swift in Sources */,
@@ -466,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA19E432A2278210001A789 /* OtpViewModel.swift in Sources */,
 				4BB2237E2A0F729F009F6142 /* DinotisSampleProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA19E442A2278210001A789 /* OtpViewModel.swift in Sources */,
 				4BB223882A0F729F009F6142 /* DinotisSampleProjectUITests.swift in Sources */,
 				4BB2238A2A0F729F009F6142 /* DinotisSampleProjectUITestsLaunchTests.swift in Sources */,
 			);
