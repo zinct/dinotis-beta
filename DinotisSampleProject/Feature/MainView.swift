@@ -22,6 +22,7 @@ struct MainView: View {
                     .isHidden(!isLoading, remove: !isLoading)
                 OnboardingView()
                     .isHidden(isLoading, remove: isLoading)
+//                AgendaView()
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
