@@ -110,7 +110,8 @@ struct AgendaView: View {
                         }
                         .tag("4")
                     }
-                    
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .edgesIgnoringSafeArea(.bottom)
                     
                     Spacer()
                                     
@@ -121,13 +122,10 @@ struct AgendaView: View {
                 .shadow(color: .black.opacity(0.1), radius: 0.2)
                 
                 
-                
-                Spacer()
-                
             }
             .edgesIgnoringSafeArea(.bottom)
-            
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

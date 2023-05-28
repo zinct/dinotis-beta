@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DinotisDesignSystem
+import DinotisData
 
 struct MainView: View {
     init() {
@@ -18,11 +19,12 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                SplashView()
-                    .isHidden(!isLoading, remove: !isLoading)
-                OnboardingView()
-                    .isHidden(isLoading, remove: isLoading)
+//                SplashView()
+//                    .isHidden(!isLoading, remove: !isLoading)
+//                OnboardingView()
+//                    .isHidden(isLoading, remove: isLoading)
 //                AgendaView()
+                JokesView(viewModel: JokesViewModel())
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

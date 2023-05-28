@@ -8,15 +8,15 @@
 import Foundation
 import Moya
 
-protocol ReusableTargetType: TargetType {
+public protocol ReusableTargetType: Moya.TargetType {
     var parameters: [String: Any] {
         get
     }
 }
 
-extension ReusableTargetType {
+public extension ReusableTargetType {
     var baseURL: URL {
-        return URL(string: "https://dev.api.dinotis.com/api/v1") ?? (NSURL() as URL)
+        return URL(string: "https://api.chucknorris.io") ?? (NSURL() as URL)
     }
     
     var parameterEncoding: Moya.ParameterEncoding {
