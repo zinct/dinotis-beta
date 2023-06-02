@@ -15,7 +15,6 @@ public protocol JokesRepository {
 public class DefaultJokesRepository: JokesRepository {
     
     private let remoteDataSource: JokesRemoteDataSource
-//    private let localDataSource: JokesLocalDataSource
     
     public init(remoteDataSource: JokesRemoteDataSource = DefaultJokesRemoteDataSource()) {
         self.remoteDataSource = remoteDataSource

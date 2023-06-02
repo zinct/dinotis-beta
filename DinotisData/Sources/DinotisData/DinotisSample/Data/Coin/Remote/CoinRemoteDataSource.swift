@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 public protocol CoinRemoteDataSource {
-	func postVerifyCoin(receiptData: String) async throws -> SuccessResponse
-	func getCoinHistory(query: GeneralParameterRequest) async throws -> CoinHistoryResponse
+//	func postVerifyCoin(receiptData: String) async throws -> SuccessResponse
+//	func getCoinHistory(query: GeneralParameterRequest) async throws -> CoinHistoryResponse
 }

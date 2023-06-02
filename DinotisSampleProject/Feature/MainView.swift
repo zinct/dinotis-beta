@@ -24,7 +24,8 @@ struct MainView: View {
 //                OnboardingView()
 //                    .isHidden(isLoading, remove: isLoading)
 //                AgendaView()
-                JokesView(viewModel: JokesViewModel())
+//                JokesView(viewModel: JokesViewModel())
+                ComicView(viewModel: ComicViewModel())
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

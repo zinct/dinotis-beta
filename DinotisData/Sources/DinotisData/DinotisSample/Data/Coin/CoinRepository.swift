@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 public protocol CoinRepository {
-	func providePostVerifyCoin(with receipt: String) async throws -> SuccessResponse
-	func provideGetCoinHistory(by query: GeneralParameterRequest) async throws -> CoinHistoryResponse
+//	func providePostVerifyCoin(with receipt: String) async throws -> SuccessResponse
+//	func provideGetCoinHistory(by query: GeneralParameterRequest) async throws -> CoinHistoryResponse
 }

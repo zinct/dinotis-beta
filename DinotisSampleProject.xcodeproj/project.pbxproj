@@ -31,6 +31,8 @@
 		4BB223A82A107ACE009F6142 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223A72A107ACE009F6142 /* HomeView.swift */; };
 		4BB223CB2A19BA59009F6142 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */; };
 		4BB223CE2A19BD11009F6142 /* AuthViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB223CD2A19BD11009F6142 /* AuthViewState.swift */; };
+		4BC2BAA32A2A123C0015877E /* ComicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BAA22A2A123C0015877E /* ComicView.swift */; };
+		4BC2BAA82A2A2BBF0015877E /* ComicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BAA72A2A2BBF0015877E /* ComicViewModel.swift */; };
 		4BDE37992A12880A00D9CA8B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE37982A12880A00D9CA8B /* MainView.swift */; };
 		4BFF3E8A2A234A1F008CEDBF /* JokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF3E892A234A1E008CEDBF /* JokesViewModel.swift */; };
 		4BFF3E8E2A234CF0008CEDBF /* JokesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFF3E8D2A234CF0008CEDBF /* JokesView.swift */; };
@@ -77,6 +79,8 @@
 		4BB223A72A107ACE009F6142 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4BB223CA2A19BA59009F6142 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4BB223CD2A19BD11009F6142 /* AuthViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewState.swift; sourceTree = "<group>"; };
+		4BC2BAA22A2A123C0015877E /* ComicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicView.swift; sourceTree = "<group>"; };
+		4BC2BAA72A2A2BBF0015877E /* ComicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewModel.swift; sourceTree = "<group>"; };
 		4BDE37982A12880A00D9CA8B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4BFF3E892A234A1E008CEDBF /* JokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewModel.swift; sourceTree = "<group>"; };
 		4BFF3E8D2A234CF0008CEDBF /* JokesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesView.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		4BB223A12A107A3E009F6142 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				4BC2BAA02A2A12270015877E /* Comic */,
 				4BFF3E862A234A01008CEDBF /* Jokes */,
 				4B50F5D72A1FA4860074E623 /* Agenda */,
 				4B84CC542A113F41005A0313 /* Auth */,
@@ -314,6 +319,31 @@
 				4BB223CD2A19BD11009F6142 /* AuthViewState.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		4BC2BAA02A2A12270015877E /* Comic */ = {
+			isa = PBXGroup;
+			children = (
+				4BC2BAA62A2A2BA90015877E /* ViewModel */,
+				4BC2BAA12A2A12310015877E /* View */,
+			);
+			path = Comic;
+			sourceTree = "<group>";
+		};
+		4BC2BAA12A2A12310015877E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BC2BAA22A2A123C0015877E /* ComicView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BC2BAA62A2A2BA90015877E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BC2BAA72A2A2BBF0015877E /* ComicViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4BFF3E862A234A01008CEDBF /* Jokes */ = {
@@ -479,6 +509,7 @@
 				4BDE37992A12880A00D9CA8B /* MainView.swift in Sources */,
 				4B479F4A2A20F3FF00AE235F /* CreatorCreateAccountViewModel.swift in Sources */,
 				4B84CC562A113F5B005A0313 /* CreatorAuthView.swift in Sources */,
+				4BC2BAA32A2A123C0015877E /* ComicView.swift in Sources */,
 				4B84CC4F2A1118B9005A0313 /* SplashView.swift in Sources */,
 				4B84CC532A113674005A0313 /* RoleView.swift in Sources */,
 				4B84CC512A11255E005A0313 /* OnboardingView.swift in Sources */,
@@ -486,6 +517,7 @@
 				4BB223CE2A19BD11009F6142 /* AuthViewState.swift in Sources */,
 				4B8D73672A16871300D833C5 /* CreatorCreateAccountView.swift in Sources */,
 				4B50F60D2A1FBA0F0074E623 /* AgendaViewModel.swift in Sources */,
+				4BC2BAA82A2A2BBF0015877E /* ComicViewModel.swift in Sources */,
 				4B9130CC2A20DB870010409A /* UserSession+getData.swift in Sources */,
 				4B479F4C2A21029200AE235F /* OtpView.swift in Sources */,
 				4BA19E422A2278210001A789 /* OtpViewModel.swift in Sources */,
