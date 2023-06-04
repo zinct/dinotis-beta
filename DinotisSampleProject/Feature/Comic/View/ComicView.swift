@@ -15,13 +15,13 @@ struct ComicView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("\((viewModel.data?.results ?? []).count) Total (Comic)")
+                    Text("\((viewModel.dummyData.value ?? []).count) Total (Comic)")
                         .foregroundColor(.secondary)
                     Spacer()
                 }
                 .padding(.horizontal, 20)
                 
-                if viewModel.status == .loading {
+                if viewModel.dummyData == .loading {
                     HStack {
                         Spacer()
                         ProgressView()
@@ -31,7 +31,7 @@ struct ComicView: View {
                     .padding(.vertical, 100)
                 } else {
                     List {
-                        ForEach(viewModel.data?.results ?? [], id: \.self) { v in
+                        ForEach(viewModel.dummyData.value ?? [], id: \.self) { v in
                             NavigationLink(destination: DetailComicView(name: v.name.orEmpty())) {
                                 HStack {
                                     VStack(alignment: .leading) {
@@ -52,6 +52,11 @@ struct ComicView: View {
                         }
                     }
                     .listStyle(.plain)
+                    .refreshable {
+                        Task {
+                            await viewModel.getData()
+                        }
+                    }
                 }
                 
                 Spacer()
@@ -79,3 +84,18 @@ struct ComicView_Previews: PreviewProvider {
         ComicView(viewModel: ComicViewModel())
     }
 }
+//
+//import UIKit
+//
+//class DummyViewController: UIViewController {
+//    
+//    private let button: UIButton!
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        button.titleLabel?.text = "Button"
+//        
+//        
+//    }
+//}

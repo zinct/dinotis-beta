@@ -14,9 +14,9 @@ public class GetListVolumeDefaultUseCase: GetListComicUseCase {
         self.repository = repository
     }
     
-    public func execute() async -> Result<VolumeResponse, Error> {
+    public func execute() async -> Result<[VolumeData], Error> {
         do {
-            let response = try await repository.getListVolume()
+            let response = try await repository.getListVolume().results ?? []
             print(response)
             return .success(response)
         } catch(let error) {

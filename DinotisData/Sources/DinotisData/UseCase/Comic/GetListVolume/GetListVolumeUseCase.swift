@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol GetListComicUseCase {
-    func execute() async -> Result<VolumeResponse, Error>
+    func execute() async -> Result<[VolumeData], Error>
 }

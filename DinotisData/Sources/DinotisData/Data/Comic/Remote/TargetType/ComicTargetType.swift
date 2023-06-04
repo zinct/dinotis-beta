@@ -10,11 +10,17 @@ import Moya
 
 public enum ComicTargetType {
     case getListVolume
+    case createUser
 }
 
 extension ComicTargetType: ReusableTargetType {
     var parameterEncoding: Moya.ParameterEncoding {
-        URLEncoding.default
+        switch self {
+        case .getListVolume:
+            return URLEncoding.queryString
+        case .createUser:
+            return JSONEncoding.default
+        }
     }
     
     public var task: Task {
@@ -27,7 +33,7 @@ extension ComicTargetType: ReusableTargetType {
     
     public var path: String {
         switch self {
-        case .getListVolume:
+        default:
             return "/volumes"
         }
     }

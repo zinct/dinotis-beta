@@ -23,7 +23,7 @@ public struct VolumeResponse: Codable {
         case statusCode = "status_code"
         case results
     }
-    
+
     public init(
         error: String?,
         limit: Int?,
