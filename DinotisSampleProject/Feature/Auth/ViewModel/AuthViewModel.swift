@@ -23,7 +23,7 @@ final class AuthViewModel: ObservableObject {
     @Published var isCountriesShow = false
     @Published var isPasswordShow = false
     @Published var otpView = false
-    @Published var isLoginSuccess = true
+    @Published var isLoginSuccess = false
     
     @Published var phoneDesired = "81395749557"
     @Published var passwordDesired = "admin"
