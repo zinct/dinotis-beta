@@ -29,7 +29,7 @@
 "otp_dont_sended" = "Kode OTP belum masuk?";
 
 // Placeholder
-"phone_placeholder" = "Masukan nomor handphone";
+"phone_placeholder" = "Masukan email";
 "password_placeholder" = "Masukan password";
 
 // Onboaring

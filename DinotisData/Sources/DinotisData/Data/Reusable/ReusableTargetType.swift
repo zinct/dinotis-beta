@@ -16,7 +16,7 @@ public protocol ReusableTargetType: Moya.TargetType {
 
 public extension ReusableTargetType {
     var baseURL: URL {
-        return URL(string: "https://comicvine.gamespot.com/api") ?? (NSURL() as URL)
+        return URL(string: "https://reqres.in/api") ?? (NSURL() as URL)
     }
     
     var parameterEncoding: Moya.ParameterEncoding {

@@ -30,6 +30,10 @@ enum DataState<T> {
     }
 }
 
+struct CustomError: Error {
+    let message: String
+}
+
 extension DataState: Equatable where T: Equatable {
     static func == (lhs: DataState<T>, rhs: DataState<T>) -> Bool {
         switch (lhs, rhs) {

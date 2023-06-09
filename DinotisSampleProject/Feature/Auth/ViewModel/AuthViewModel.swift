@@ -7,11 +7,14 @@
 
 import SwiftUI
 import DinotisDesignSystem
+import DinotisData
 
 final class AuthViewModel: ObservableObject {
+    private let checkCredential: CheckCredentialUseCase
+    
+    @Published var login: DataState<LoginResponse> = .idle
     
     @Published var selectedCountry = Country.getAll()[0]
-    
     @Published var phone = ""
     @Published var password = ""
     @Published var state: AuthViewState = .login
@@ -20,28 +23,31 @@ final class AuthViewModel: ObservableObject {
     @Published var isCountriesShow = false
     @Published var isPasswordShow = false
     @Published var otpView = false
-    @Published var isLoginSuccess = false
+    @Published var isLoginSuccess = true
     
     @Published var phoneDesired = "81395749557"
     @Published var passwordDesired = "admin"
     
+    init(checkCredential: CheckCredentialUseCase = CheckCredentialUseCaseV1()) {
+        self.checkCredential = checkCredential
+    }
     
-    func handleLogin() {
-        if phone != phoneDesired {
-            isPhoneError = true
-        } else {
-            isPhoneError = false
+    func handleLogin() async {
+        DispatchQueue.main.async { [weak self] in
+            self?.login = .loading
         }
         
-        if password != passwordDesired {
-            isPasswordError = true
-        } else {
-            isPasswordError = false
-        }
+        let result = await checkCredential.execute(credential: LoginRequest(email: phone, password: password))
         
-        if phone == phoneDesired && password == passwordDesired {
-            withAnimation {
-                isLoginSuccess = true
+        switch result {
+        case .success(let success):
+            DispatchQueue.main.async { [weak self] in
+                self?.login = .success(value: success)
+                self?.isLoginSuccess = true
+            }
+        case .failure(let failure):
+            DispatchQueue.main.async { [weak self] in
+                self?.login = .error(failure)
             }
         }
     }

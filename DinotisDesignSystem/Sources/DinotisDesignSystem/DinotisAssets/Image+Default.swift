@@ -21,6 +21,15 @@ public extension Image {
     static let imgEmptyAgenda = Image("img-empty-agenda", bundle: .module)
     static let imgAvatarAgenda = Image("img-avatar-agenda", bundle: .module)
     static let imgGirlAgenda = Image("img-girl-agenda", bundle: .module)
+    static let imgLogoutProfile = Image("img-logout-profile", bundle: .module)
+    static let imgLoveProfile = Image("img-love-profile", bundle: .module)
+    static let imgOperatorProfile = Image("img-operator-profile", bundle: .module)
+    static let imgUserProfile = Image("img-user-profile", bundle: .module)
+    static let imgAvatarProfile = Image("img-avatar-profile", bundle: .module)
+    static let imgLockProfile = Image("img-lock-profile", bundle: .module)
+    static let imgTrashProfile = Image("img-trash-profile", bundle: .module)
+    static let imgPeopleContact = Image("img-people-contact", bundle: .module)
+    static let imgAvatarEditprofile = Image("img-avatar-editprofile", bundle: .module)
     
     // Icons
     static let icArrowrightRole = Image("ic-arrowright-role", bundle: .module)
@@ -30,4 +39,6 @@ public extension Image {
     static let icNotificationTopbar = Image("ic-notification-topbar", bundle: .module)
     static let icVerifiedCommon = Image("ic-verified-common", bundle: .module)
     static let icPricetagAgenda = Image("ic-pricetag-agenda", bundle: .module)
+    static let icCoinProfile = Image("ic-coin-profile", bundle: .module)
+    static let icRefreshProfile = Image("ic-refresh-profile", bundle: .module)
 }

@@ -13,8 +13,7 @@ public enum ImageType {
     case flexible
 }
 
-public struct SwiftUIView: View {
-    
+public struct DinotisImageLoader: View {
     private let imageURL: String?
     private let imageType: ImageType?
     
@@ -47,8 +46,8 @@ public struct SwiftUIView: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct DinotisImageLoaderView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView(imageURL: "https://reqres.in/img/faces/2-image.jpg")
+        DinotisImageLoader(imageURL: "https://reqres.in/img/faces/2-image.jpg")
     }
 }

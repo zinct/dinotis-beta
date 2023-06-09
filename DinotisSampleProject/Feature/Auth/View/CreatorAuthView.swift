@@ -10,7 +10,7 @@ import DinotisDesignSystem
 
 struct CreatorAuthView: View {
     
-    @ObservedObject var viewModel: AuthViewModel = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -37,25 +37,11 @@ struct CreatorAuthView: View {
                         LocalizableText.phonePlaceholder,
                         text: $viewModel.phone,
                         validator: {
-                            if viewModel.isPhoneError {
-                                return "*Nomor telepon yang anda masukan belum terdaftar"
-                            }
-                        
-                        return nil
-                        }, prefix: {
-                            Button(action: {
-                                viewModel.isCountriesShow = true
-                            }) {
-                                HStack {
-                                    Text(viewModel.selectedCountry.field)
-                                        .font(.robotoLight(size: 12))
-                                        .foregroundColor(Color.secondaryBlack)
-                                    
-                                    Image.icDropdownAuth
-                                        .padding(.trailing, -3)
-                                    
-                                    Divider()
-                                }
+                            switch viewModel.login {
+                            case .error(_):
+                                return "*Email Atau Password salah!"
+                            default:
+                                return nil
                             }
                         })
                     .padding(.bottom, 5)
@@ -138,7 +124,9 @@ struct CreatorAuthView: View {
                 switch viewModel.state {
                 case .login:
                     DinotisPrimaryButton(text: "Masuk", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "" || viewModel.password == "") {
-                        viewModel.handleLogin()
+                        Task {
+                            await viewModel.handleLogin()
+                        }
                     }
                 case .register:
                     NavigationLink(destination: OtpView(), isActive: $viewModel.otpView) {EmptyView()}
