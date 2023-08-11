@@ -137,6 +137,7 @@ public struct DinotisSessionCard: View {
         .cornerRadius(8)
         .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 3)
         .padding(.horizontal, 15)
+
     }
 }
 

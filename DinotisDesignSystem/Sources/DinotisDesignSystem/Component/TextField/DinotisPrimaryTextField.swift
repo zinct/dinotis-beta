@@ -58,10 +58,7 @@ public struct DinotisPrimaryTextField<Prefix: View, Suffix: View>: View {
             )
             .padding(.bottom, 5)
             
-            Spacer()
         }
-        
-        Spacer()
         
         HStack {
             Text(validator() ?? "")

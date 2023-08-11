@@ -14,6 +14,10 @@ struct HomeView: View {
     
     @StateObject var authViewModel: AuthViewModel = AuthViewModel()
     
+    public let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    @State private var selection = 0
+    @State private var filterSelection = 0
+    
     
     var body: some View {
         ZStack {
@@ -57,6 +61,7 @@ struct HomeView: View {
 
                                         HStack {
                                             Image.imgWalletHome
+                                                .padding(.trailing, 4)
 
                                             Text("Rp 120.000")
                                                 .font(.robotoBold(size: 12))
@@ -269,26 +274,24 @@ struct HomeView: View {
                                 .cornerRadius(10)
                                 .padding(.top, 15)
                                 .padding(.horizontal, 20)
+                                .padding(.bottom, 20)
                             
-                            Image.imgSliderHome
-                                .resizable()
-                                .padding(.top, 15)
+                            TabView(selection : $selection){
+                                ForEach(0..<3){ i in
+                                    Image.imgSliderHome
+                                        .resizable()
+                                        .scaledToFit()
+                                }
                                 
-                            HStack(alignment: .center) {
-                                Spacer()
-                                Circle()
-                                    .fill(Color.primaryPurple)
-                                    .frame(width: 10, height: 10)
-                                
-                                Circle()
-                                    .fill(Color.secondaryPurple)
-                                    .frame(width: 10, height: 10)
-                                
-                                Circle()
-                                    .fill(Color.secondaryPurple)
-                                    .frame(width: 10, height: 10)
-                                Spacer()
                             }
+                            .tabViewStyle(PageTabViewStyle())
+                            .frame(width: .infinity, height: 200)
+                            .onReceive(timer, perform: { _ in
+                                                
+                                withAnimation{
+                                    selection = selection < 3 ? selection + 1 : 0
+                                }
+                            })
                             .padding(.bottom, 20)
                             
                             Text("Yang lagi populer")
@@ -300,63 +303,71 @@ struct HomeView: View {
                                     Rectangle()
                                         .fill(Color.black.opacity(0))
 
-                                    VStack {
-                                        Image.imgDummyPeople2Home
-                                            .resizable()
-                                            .frame(width: 154, height: 154)
-
-                                        HStack {
-                                            Text("Adinda Marala")
-                                                .font(.robotoBold(size: 11))
-
-                                            Image.icVerifiedCommon
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        VStack {
+                                            Image.imgDummyPeople2Home
                                                 .resizable()
-                                                .frame(width: 12, height: 12)
+                                                .frame(width: 154, height: 154)
+
+                                            HStack {
+                                                Text("Adinda Marala")
+                                                    .font(.robotoBold(size: 11))
+                                                    .foregroundColor(.black)
+
+                                                Image.icVerifiedCommon
+                                                    .resizable()
+                                                    .frame(width: 12, height: 12)
+                                            }
+
                                         }
-
+                                        .padding(.bottom, 8)
+                                        .background(Color.white)
+                                        .cornerRadius(5)
                                     }
-                                    .padding(.bottom, 8)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
-
-                                    VStack {
-                                        Image.imgDummyPeople5Home
-                                            .resizable()
-                                            .frame(width: 154, height: 154)
-
-                                        HStack {
-                                            Text("Adinda Marala")
-                                                .font(.robotoBold(size: 11))
-
-                                            Image.icVerifiedCommon
+                                    
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        VStack {
+                                            Image.imgDummyPeople5Home
                                                 .resizable()
-                                                .frame(width: 12, height: 12)
+                                                .frame(width: 154, height: 154)
+
+                                            HStack {
+                                                Text("Adinda Marala")
+                                                    .font(.robotoBold(size: 11))
+                                                    .foregroundColor(.black)
+
+                                                Image.icVerifiedCommon
+                                                    .resizable()
+                                                    .frame(width: 12, height: 12)
+                                            }
+
                                         }
-
+                                        .padding(.bottom, 8)
+                                        .background(Color.white)
+                                        .cornerRadius(5)
                                     }
-                                    .padding(.bottom, 8)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
-
-                                    VStack {
-                                        Image.imgDummyPeopleHome
-                                            .resizable()
-                                            .frame(width: 154, height: 154)
-                                            .scaledToFit()
-
-                                        HStack {
-                                            Text("Adinda Marala")
-                                                .font(.robotoBold(size: 11))
-
-                                            Image.icVerifiedCommon
+                                    
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        VStack {
+                                            Image.imgDummyPeopleHome
                                                 .resizable()
-                                                .frame(width: 12, height: 12)
-                                        }
+                                                .frame(width: 154, height: 154)
 
+                                            HStack {
+                                                Text("Adinda Marala")
+                                                    .font(.robotoBold(size: 11))
+                                                    .foregroundColor(.black)
+
+                                                Image.icVerifiedCommon
+                                                    .resizable()
+                                                    .frame(width: 12, height: 12)
+                                            }
+
+                                        }
+                                        .padding(.bottom, 8)
+                                        .background(Color.white)
+                                        .cornerRadius(5)
                                     }
-                                    .padding(.bottom, 8)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
 
                                     Rectangle()
                                         .fill(Color.black.opacity(0))
@@ -567,34 +578,49 @@ struct HomeView: View {
                                     .font(.robotoRegular(size: 12))
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 10)
-                                    .background(Color.primaryPurple)
-                                    .foregroundColor(.white)
+                                    .background(filterSelection == 0 ? Color.primaryPurple : Color.shadeGrey)
+                                    .foregroundColor(filterSelection == 0 ?  .white : .black)
                                     .cornerRadius(5)
                                     .padding(.trailing, 10)
+                                    .onTapGesture {
+                                        filterSelection = 0
+                                    }
                                 
                                 Text("Konten Kreator")
                                     .font(.robotoRegular(size: 12))
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 10)
-                                    .background(Color.shadeGrey)
+                                    .background(filterSelection == 1 ? Color.primaryPurple : Color.shadeGrey)
+                                    .foregroundColor(filterSelection == 1 ?  .white : .black)
                                     .cornerRadius(5)
                                     .padding(.trailing, 10)
+                                    .onTapGesture {
+                                        filterSelection = 1
+                                    }
                                 
                                 Text("Psikolog")
                                     .font(.robotoRegular(size: 12))
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 10)
-                                    .background(Color.shadeGrey)
+                                    .background(filterSelection == 2 ? Color.primaryPurple : Color.shadeGrey)
+                                    .foregroundColor(filterSelection == 2 ?  .white : .black)
                                     .cornerRadius(5)
                                     .padding(.trailing, 10)
+                                    .onTapGesture {
+                                        filterSelection = 2
+                                    }
                                 
                                 Text("Lainnya")
                                     .font(.robotoRegular(size: 12))
                                     .padding(.horizontal, 20)
                                     .padding(.vertical, 10)
-                                    .background(Color.shadeGrey)
+                                    .background(filterSelection == 3 ? Color.primaryPurple : Color.shadeGrey)
+                                    .foregroundColor(filterSelection == 3 ?  .white : .black)
                                     .cornerRadius(5)
                                     .padding(.trailing, 10)
+                                    .onTapGesture {
+                                        filterSelection = 3
+                                    }
                             }
                         }
                         .scrollIndicators(.hidden)
@@ -655,7 +681,7 @@ struct HomeView: View {
                         
                         Text("Jadwal")
                             .font(.robotoMedium(size: 12))
-                            .foregroundColor(.gray)
+                            .foregroundColor(tabIndex == 0 ? .primaryPurple : Color.gray)
                     }
                     .onTapGesture {
                         tabIndex = 0
@@ -668,7 +694,7 @@ struct HomeView: View {
                         
                         Text("Home")
                             .font(.robotoMedium(size: 12))
-                            .foregroundColor(.primaryPurple)
+                            .foregroundColor(tabIndex == 1 ? .primaryPurple : Color.gray)
                     }
                     .onTapGesture {
                         tabIndex = 1
@@ -681,7 +707,7 @@ struct HomeView: View {
                         
                         Text("Profile")
                             .font(.robotoMedium(size: 12))
-                            .foregroundColor(.gray)
+                            .foregroundColor(tabIndex == 2 ? .primaryPurple : Color.gray)
                     }
                     .onTapGesture {
                         tabIndex = 2

@@ -21,7 +21,6 @@ struct ServiceCreateView: View {
                 ScrollView {
                     VStack {
                         DinotisSecondaryTopBar(title: "Booking Layanan")
-                            .padding(.horizontal, 24)
                         
                         VStack(alignment: .leading) {
                             HStack {
@@ -114,7 +113,42 @@ struct ServiceCreateView: View {
                                     .font(.robotoRegular(size: 12))
                             }
                             
-                            DinotisPrimaryTextField("", text: $viewModel.message)
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .top) {
+                                    
+                                    TextField("Masukkan hari & jam Private Call yang kamu harapkan...", text: $viewModel.message, axis: .vertical)
+                                        .lineLimit(5, reservesSpace: true)
+                                        .font(.robotoRegular(size: 12))
+                                    
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 16)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .inset(by: 0.5)
+                                        .stroke(Color(hex: "#CACCCF") ?? Color.secondary, lineWidth: 0.5)
+                                )
+                                .padding(.bottom, 10)
+                                
+                                DatePicker(
+                                        
+                                        selection: $viewModel.date,
+                                        displayedComponents: [.date]
+                                ) {
+                                    HStack {
+                                        Image.imgCalendarHome
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 20, height: 20)
+                                            .padding(.trailing, 10)
+                                        
+                                        Text("Jadwal")
+                                            .font(.robotoRegular(size: 12))
+                                    }
+                                }
+                                
+                                Spacer()
+                            }
                         }
                         .padding(.vertical, 15)
                         .padding(.horizontal, 20)
@@ -123,6 +157,8 @@ struct ServiceCreateView: View {
                     }
                     .padding(.horizontal, 20)
                 }
+                
+                
                 
                 Spacer()
                 
@@ -137,6 +173,7 @@ struct ServiceCreateView: View {
                     .padding(.vertical, 10)
                     .background(Color.white)
             }
+            .navigationBarBackButtonHidden()
             
         }
     }

@@ -34,15 +34,15 @@ struct AgendaView: View {
                 .padding(.bottom, 20)
                 .padding(.horizontal, 24)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            AgendaRecommendedCard()
-                                .padding(.leading, 24)
-                            AgendaRecommendedCard()
-                            AgendaRecommendedCard()
-                                .padding(.trailing, 24)
-                        }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        AgendaRecommendedCard()
+                            .padding(.leading, 24)
+                        AgendaRecommendedCard()
+                        AgendaRecommendedCard()
+                            .padding(.trailing, 24)
                     }
+                }
                 
                 
                 VStack {
@@ -62,8 +62,10 @@ struct AgendaView: View {
                         VStack {
                             ScrollView {
                                 ForEach(viewModel.userSession) { userSession in
-                                    DinotisSessionCard(sessionData: userSession)
-                                        .padding(.bottom, 20)
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        DinotisSessionCard(sessionData: userSession)
+                                            .padding(.bottom, 20)
+                                    }
                                 }
                             }
                             
@@ -73,8 +75,10 @@ struct AgendaView: View {
                         VStack {
                             ScrollView {
                                 ForEach(viewModel.userSession.filter({$0.status == .pending})) { userSession in
-                                    DinotisSessionCard(sessionData: userSession)
-                                        .padding(.bottom, 20)
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        DinotisSessionCard(sessionData: userSession)
+                                            .padding(.bottom, 20)
+                                    }
                                 }
                             }
                         }
@@ -83,8 +87,11 @@ struct AgendaView: View {
                         VStack {
                             ScrollView {
                                 ForEach(viewModel.userSession.filter({$0.status == .upcoming})) { userSession in
-                                    DinotisSessionCard(sessionData: userSession)
-                                        .padding(.bottom, 20)
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        DinotisSessionCard(sessionData: userSession)
+                                            .padding(.bottom, 20)
+                                    }
+                                    
                                 }
                             }
                         }
@@ -93,8 +100,10 @@ struct AgendaView: View {
                         VStack {
                             ScrollView {
                                 ForEach(viewModel.userSession.filter({$0.status == .done})) { userSession in
-                                    DinotisSessionCard(sessionData: userSession)
-                                        .padding(.bottom, 20)
+                                    NavigationLink(destination: CreatorDetailView()) {
+                                        DinotisSessionCard(sessionData: userSession)
+                                            .padding(.bottom, 20)
+                                    }
                                 }
                             }
                         }
@@ -137,62 +146,66 @@ struct AgendaView_Previews: PreviewProvider {
 
 public struct AgendaRecommendedCard: View {
     public var body: some View {
-        ZStack {
-            LinearGradient(colors: [.pink, .blue], startPoint: .bottomTrailing, endPoint: .topLeading)
-            VStack(alignment: .leading) {
-                Text("🗓️ Selasa, 27 Juli 2020 • 13.00 - 14.00")
-                    .foregroundColor(.white)
-                    .font(.robotoRegular(size: 10))
-                    .padding(.bottom, 9)
-                
-                Text("Cara memahami emosional yang tidak stabil dalam menghadapi masalah di dunia ")
-                    .foregroundColor(.white)
-                    .font(.robotoBold(size: 14))
-                    .padding(.bottom, 9)
-                    .lineLimit(2, reservesSpace: true)
-                
-                Text("⚡️ Sesi Private")
-                    .foregroundColor(.accentPurple)
-                    .font(.robotoRegular(size: 10))
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(.white)
-                    .cornerRadius(20)
-                    .padding(.bottom, 10)
-                
-                HStack {
-                    Image.imgAvatarAgenda
-                    
-                    Text("Indra Mahesa")
+        NavigationLink(destination: CreatorDetailView()) {
+            ZStack {
+                LinearGradient(colors: [.pink, .blue], startPoint: .bottomTrailing, endPoint: .topLeading)
+                VStack(alignment: .leading) {
+                    Text("🗓️ Selasa, 27 Juli 2020 • 13.00 - 14.00")
                         .foregroundColor(.white)
-                        .font(.robotoBold(size: 12))
+                        .font(.robotoRegular(size: 10))
+                        .padding(.bottom, 9)
                     
-                    Image.icVerifiedCommon
+                    Text("Cara memahami emosional yang tidak stabil dalam menghadapi masalah di dunia ")
+                        .foregroundColor(.white)
+                        .font(.robotoBold(size: 14))
+                        .padding(.bottom, 9)
+                        .lineLimit(2, reservesSpace: true)
+                        .multilineTextAlignment(.trailing)
                     
-                    Spacer()
-                    
-                    Text("Lihat")
+                    Text("⚡️ Sesi Private")
                         .foregroundColor(.accentPurple)
-                        .font(.robotoBold(size: 10))
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 8)
+                        .font(.robotoRegular(size: 10))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
                         .background(.white)
                         .cornerRadius(20)
+                        .padding(.bottom, 10)
+                    
+                    HStack {
+                        Image.imgAvatarAgenda
+                        
+                        Text("Indra Mahesa")
+                            .foregroundColor(.white)
+                            .font(.robotoBold(size: 12))
+                        
+                        Image.icVerifiedCommon
+                        
+                        Spacer()
+                        
+                        Text("Lihat")
+                            .foregroundColor(.accentPurple)
+                            .font(.robotoBold(size: 10))
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 8)
+                            .background(.white)
+                            .cornerRadius(20)
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 8)
+                    .background(.white.opacity(0.10))
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.white.opacity(0.2), lineWidth: 0.5)
+                    )
                 }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 8)
-                .background(.white.opacity(0.10))
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.white.opacity(0.2), lineWidth: 0.5)
-                )
+                .padding(20)
             }
-            .padding(20)
+            .frame(width: 307, height: 205)
+            .background(Color.gray)
+            .cornerRadius(8)
+            .padding(.bottom, 20)
         }
-        .frame(width: 307, height: 205)
-        .background(Color.gray)
-        .cornerRadius(8)
-        .padding(.bottom, 20)
+
     }
 }

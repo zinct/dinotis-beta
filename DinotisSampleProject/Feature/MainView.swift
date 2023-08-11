@@ -20,29 +20,11 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-//                ServiceCreateView()
-//                ServiceCreateView()
-//                CreatorSubscriptionView()
-//                CreatorDetailView()
-//                RoleView()
-//HomeView()
-//                SplashView()
-//                    .isHidden(!isLoading, remove: !isLoading)
-//                OnboardingView()
-//                    .isHidden(isLoading, remove: isLoading)
+                SplashView()
+                    .isHidden(!isLoading, remove: !isLoading)
+                OnboardingView()
+                    .isHidden(isLoading, remove: isLoading)
 
-//                ProfileView(viewModel: ProfileViewModel())
-//                HomeView()
-//                SubscriptionView()
-//                EditProfileView()
-//                AgendaView()
-                
-                ProfileView(viewModel: ProfileViewModel())
-                if authViewModel.isLoginSuccess {
-                    ProfileView(viewModel: ProfileViewModel())
-                } else {
-                    CreatorAuthView()
-                }
             }
             .environmentObject(authViewModel)
             .onAppear {

@@ -11,4 +11,5 @@ import DinotisDesignSystem
 
 final class ServiceCreateViewModel: ObservableObject {
     @Published var message = ""
+    @Published var date: Date = .now
 }
