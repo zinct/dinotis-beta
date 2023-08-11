@@ -8,11 +8,11 @@
 import Foundation
 import Moya
 
-public enum CoinTargetType {
+//public enum CoinTargetType {
 //	case verifyCoin(String)
 //	case coinHistory(GeneralParameterRequest)
-}
-
+//}
+//
 //extension CoinTargetType: DinotisTargetType, AccessTokenAuthorizable {
 //	public var authorizationType: AuthorizationType? {
 //		return .bearer

@@ -33,7 +33,7 @@ public struct DinotisPrimaryTextField<Prefix: View, Suffix: View>: View {
     
     public var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(alignment: .top) {
                 prefix
                 
                 if !secured {
@@ -57,7 +57,11 @@ public struct DinotisPrimaryTextField<Prefix: View, Suffix: View>: View {
                     .stroke(Color(hex: "#CACCCF") ?? Color.secondary, lineWidth: 0.5)
             )
             .padding(.bottom, 5)
+            
+            Spacer()
         }
+        
+        Spacer()
         
         HStack {
             Text(validator() ?? "")
@@ -68,6 +72,7 @@ public struct DinotisPrimaryTextField<Prefix: View, Suffix: View>: View {
         }
         .padding(.top, -8)
         .isHidden(validator() == nil, remove: validator() == nil)
+        
     }
 }
 

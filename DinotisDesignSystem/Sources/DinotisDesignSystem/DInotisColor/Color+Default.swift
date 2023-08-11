@@ -24,4 +24,7 @@ public extension Color {
     static let secondaryRed = Color("SecondaryRed", bundle: .module)
     static let primaryYellow = Color("PrimaryYellow", bundle: .module)
     static let secondaryYellow = Color("SecondaryYellow", bundle: .module)
+    static let darkPurple = Color("DarkPurple", bundle: .module)
+    static let shadeGrey = Color("ShadeGrey", bundle: .module)
+    static let primaryOrange = Color("PrimaryOrange", bundle: .module)
 }

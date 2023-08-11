@@ -2,7 +2,7 @@
 //  AuthViewModel.swift
 //  DinotisSampleProject
 //
-//  Created by Irham Naufal on 21/05/23.
+//  Created by Indra Mahesa on 21/05/23.
 //
 
 import SwiftUI
@@ -10,7 +10,7 @@ import DinotisDesignSystem
 import DinotisData
 
 final class AuthViewModel: ObservableObject {
-    private let checkCredential: CheckCredentialUseCase
+//    private let checkCredential: CheckCredentialUseCase
     
     @Published var login: DataState<LoginResponse> = .idle
     
@@ -28,27 +28,27 @@ final class AuthViewModel: ObservableObject {
     @Published var phoneDesired = "81395749557"
     @Published var passwordDesired = "admin"
     
-    init(checkCredential: CheckCredentialUseCase = CheckCredentialUseCaseV1()) {
-        self.checkCredential = checkCredential
-    }
+//    init(checkCredential: CheckCredentialUseCase = CheckCredentialUseCaseV1()) {
+//        self.checkCredential = checkCredential
+//    }
     
-    func handleLogin() async {
-        DispatchQueue.main.async { [weak self] in
-            self?.login = .loading
-        }
-        
-        let result = await checkCredential.execute(credential: LoginRequest(email: phone, password: password))
-        
-        switch result {
-        case .success(let success):
-            DispatchQueue.main.async { [weak self] in
-                self?.login = .success(value: success)
-                self?.isLoginSuccess = true
-            }
-        case .failure(let failure):
-            DispatchQueue.main.async { [weak self] in
-                self?.login = .error(failure)
-            }
-        }
-    }
+//    func handleLogin() async {
+//        DispatchQueue.main.async { [weak self] in
+//            self?.login = .loading
+//        }
+//
+//        let result = await checkCredential.execute(credential: LoginRequest(email: phone, password: password))
+//
+//        switch result {
+//        case .success(let success):
+//            DispatchQueue.main.async { [weak self] in
+//                self?.login = .success(value: success)
+//                self?.isLoginSuccess = true
+//            }
+//        case .failure(let failure):
+//            DispatchQueue.main.async { [weak self] in
+//                self?.login = .error(failure)
+//            }
+//        }
+//    }
 }

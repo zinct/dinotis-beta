@@ -20,25 +20,33 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
+//                ServiceCreateView()
+//                ServiceCreateView()
+//                CreatorSubscriptionView()
+//                CreatorDetailView()
+//                RoleView()
+//HomeView()
+//                SplashView()
+//                    .isHidden(!isLoading, remove: !isLoading)
+//                OnboardingView()
+//                    .isHidden(isLoading, remove: isLoading)
+
 //                ProfileView(viewModel: ProfileViewModel())
+//                HomeView()
+//                SubscriptionView()
+//                EditProfileView()
+//                AgendaView()
+                
+                ProfileView(viewModel: ProfileViewModel())
                 if authViewModel.isLoginSuccess {
                     ProfileView(viewModel: ProfileViewModel())
                 } else {
                     CreatorAuthView()
                 }
-//                EditProfileView() 
-//                ProfileView()
-//                SplashView()
-//                    .isHidden(!isLoading, remove: !isLoading)
-//                OnboardingView()
-//                    .isHidden(isLoading, remove: isLoading)
-//                AgendaView()
-//                JokesView(viewModel: JokesViewModel())
-//                ComicView(viewModel: ComicViewModel())
             }
             .environmentObject(authViewModel)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation(.default) {
                         isLoading = false
                     }

@@ -10,7 +10,7 @@ import DinotisDesignSystem
 
 struct CreatorAuthView: View {
     
-    @EnvironmentObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel = AuthViewModel()
     
     var body: some View {
         ZStack {
@@ -123,10 +123,10 @@ struct CreatorAuthView: View {
                 
                 switch viewModel.state {
                 case .login:
+                    NavigationLink(destination: HomeView(), isActive: $viewModel.isLoginSuccess) {EmptyView()}
+                    
                     DinotisPrimaryButton(text: "Masuk", type: .adaptiveScreen, textColor: .white, bgColor: .primaryPurple, disabled: viewModel.phone == "" || viewModel.password == "") {
-                        Task {
-                            await viewModel.handleLogin()
-                        }
+                        viewModel.isLoginSuccess = true
                     }
                 case .register:
                     NavigationLink(destination: OtpView(), isActive: $viewModel.otpView) {EmptyView()}
@@ -143,8 +143,6 @@ struct CreatorAuthView: View {
                     .presentationCornerRadius(28)
             }
             .navigationBarBackButtonHidden()
-            
-            DinotisAlertModal(title: "Berhasil!", bodyText: "Selamat anda berhasil login", isModalOpen: $viewModel.isLoginSuccess)
         }
     }
 }
